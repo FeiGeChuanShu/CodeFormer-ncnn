@@ -2,7 +2,7 @@
 ncnn version of CodeFormer **Towards Robust Blind Face Restoration with Codebook Lookup Transformer**  
 
 ## model support:  
-### 1.Face Restoration  
+1.Face Restoration  
 
 ## Run  
 ### Face Restoration (cropped and aligned face)  
