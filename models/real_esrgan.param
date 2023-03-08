@@ -1,0 +1,1002 @@
+7767517
+1000 1783
+Input                    input                    0 1 input
+Reorg                    Reshape_2                1 1 input 724 0=2
+Convolution              Conv_3                   1 1 724 725 0=64 1=3 4=1 5=1 6=6912
+Split                    splitncnn_0              1 8 725 725_splitncnn_0 725_splitncnn_1 725_splitncnn_2 725_splitncnn_3 725_splitncnn_4 725_splitncnn_5 725_splitncnn_6 725_splitncnn_7
+Convolution              Conv_4                   1 1 725_splitncnn_7 727 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_1              1 4 727 727_splitncnn_0 727_splitncnn_1 727_splitncnn_2 727_splitncnn_3
+Concat                   Concat_6                 2 1 725_splitncnn_6 727_splitncnn_3 728
+Convolution              Conv_7                   1 1 728 730 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_2              1 3 730 730_splitncnn_0 730_splitncnn_1 730_splitncnn_2
+Concat                   Concat_9                 3 1 725_splitncnn_5 727_splitncnn_2 730_splitncnn_2 731
+Convolution              Conv_10                  1 1 731 733 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_3              1 2 733 733_splitncnn_0 733_splitncnn_1
+Concat                   Concat_12                4 1 725_splitncnn_4 727_splitncnn_1 730_splitncnn_1 733_splitncnn_1 734
+Convolution              Conv_13                  1 1 734 736 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_15                5 1 725_splitncnn_3 727_splitncnn_0 730_splitncnn_0 733_splitncnn_0 736 737
+Convolution              Conv_16                  1 1 737 738 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_19                   2 1 738 725_splitncnn_2 741 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_4              1 6 741 741_splitncnn_0 741_splitncnn_1 741_splitncnn_2 741_splitncnn_3 741_splitncnn_4 741_splitncnn_5
+Convolution              Conv_20                  1 1 741_splitncnn_5 743 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_5              1 4 743 743_splitncnn_0 743_splitncnn_1 743_splitncnn_2 743_splitncnn_3
+Concat                   Concat_22                2 1 741_splitncnn_4 743_splitncnn_3 744
+Convolution              Conv_23                  1 1 744 746 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_6              1 3 746 746_splitncnn_0 746_splitncnn_1 746_splitncnn_2
+Concat                   Concat_25                3 1 741_splitncnn_3 743_splitncnn_2 746_splitncnn_2 747
+Convolution              Conv_26                  1 1 747 749 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_7              1 2 749 749_splitncnn_0 749_splitncnn_1
+Concat                   Concat_28                4 1 741_splitncnn_2 743_splitncnn_1 746_splitncnn_1 749_splitncnn_1 750
+Convolution              Conv_29                  1 1 750 752 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_31                5 1 741_splitncnn_1 743_splitncnn_0 746_splitncnn_0 749_splitncnn_0 752 753
+Convolution              Conv_32                  1 1 753 754 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_35                   2 1 754 741_splitncnn_0 757 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_8              1 6 757 757_splitncnn_0 757_splitncnn_1 757_splitncnn_2 757_splitncnn_3 757_splitncnn_4 757_splitncnn_5
+Convolution              Conv_36                  1 1 757_splitncnn_5 759 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_9              1 4 759 759_splitncnn_0 759_splitncnn_1 759_splitncnn_2 759_splitncnn_3
+Concat                   Concat_38                2 1 757_splitncnn_4 759_splitncnn_3 760
+Convolution              Conv_39                  1 1 760 762 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_10             1 3 762 762_splitncnn_0 762_splitncnn_1 762_splitncnn_2
+Concat                   Concat_41                3 1 757_splitncnn_3 759_splitncnn_2 762_splitncnn_2 763
+Convolution              Conv_42                  1 1 763 765 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_11             1 2 765 765_splitncnn_0 765_splitncnn_1
+Concat                   Concat_44                4 1 757_splitncnn_2 759_splitncnn_1 762_splitncnn_1 765_splitncnn_1 766
+Convolution              Conv_45                  1 1 766 768 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_47                5 1 757_splitncnn_1 759_splitncnn_0 762_splitncnn_0 765_splitncnn_0 768 769
+Convolution              Conv_48                  1 1 769 770 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_51                   2 1 770 757_splitncnn_0 773 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_54                   2 1 773 725_splitncnn_1 776 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_12             1 7 776 776_splitncnn_0 776_splitncnn_1 776_splitncnn_2 776_splitncnn_3 776_splitncnn_4 776_splitncnn_5 776_splitncnn_6
+Convolution              Conv_55                  1 1 776_splitncnn_6 778 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_13             1 4 778 778_splitncnn_0 778_splitncnn_1 778_splitncnn_2 778_splitncnn_3
+Concat                   Concat_57                2 1 776_splitncnn_5 778_splitncnn_3 779
+Convolution              Conv_58                  1 1 779 781 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_14             1 3 781 781_splitncnn_0 781_splitncnn_1 781_splitncnn_2
+Concat                   Concat_60                3 1 776_splitncnn_4 778_splitncnn_2 781_splitncnn_2 782
+Convolution              Conv_61                  1 1 782 784 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_15             1 2 784 784_splitncnn_0 784_splitncnn_1
+Concat                   Concat_63                4 1 776_splitncnn_3 778_splitncnn_1 781_splitncnn_1 784_splitncnn_1 785
+Convolution              Conv_64                  1 1 785 787 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_66                5 1 776_splitncnn_2 778_splitncnn_0 781_splitncnn_0 784_splitncnn_0 787 788
+Convolution              Conv_67                  1 1 788 789 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_70                   2 1 789 776_splitncnn_1 792 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_16             1 6 792 792_splitncnn_0 792_splitncnn_1 792_splitncnn_2 792_splitncnn_3 792_splitncnn_4 792_splitncnn_5
+Convolution              Conv_71                  1 1 792_splitncnn_5 794 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_17             1 4 794 794_splitncnn_0 794_splitncnn_1 794_splitncnn_2 794_splitncnn_3
+Concat                   Concat_73                2 1 792_splitncnn_4 794_splitncnn_3 795
+Convolution              Conv_74                  1 1 795 797 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_18             1 3 797 797_splitncnn_0 797_splitncnn_1 797_splitncnn_2
+Concat                   Concat_76                3 1 792_splitncnn_3 794_splitncnn_2 797_splitncnn_2 798
+Convolution              Conv_77                  1 1 798 800 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_19             1 2 800 800_splitncnn_0 800_splitncnn_1
+Concat                   Concat_79                4 1 792_splitncnn_2 794_splitncnn_1 797_splitncnn_1 800_splitncnn_1 801
+Convolution              Conv_80                  1 1 801 803 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_82                5 1 792_splitncnn_1 794_splitncnn_0 797_splitncnn_0 800_splitncnn_0 803 804
+Convolution              Conv_83                  1 1 804 805 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_86                   2 1 805 792_splitncnn_0 808 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_20             1 6 808 808_splitncnn_0 808_splitncnn_1 808_splitncnn_2 808_splitncnn_3 808_splitncnn_4 808_splitncnn_5
+Convolution              Conv_87                  1 1 808_splitncnn_5 810 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_21             1 4 810 810_splitncnn_0 810_splitncnn_1 810_splitncnn_2 810_splitncnn_3
+Concat                   Concat_89                2 1 808_splitncnn_4 810_splitncnn_3 811
+Convolution              Conv_90                  1 1 811 813 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_22             1 3 813 813_splitncnn_0 813_splitncnn_1 813_splitncnn_2
+Concat                   Concat_92                3 1 808_splitncnn_3 810_splitncnn_2 813_splitncnn_2 814
+Convolution              Conv_93                  1 1 814 816 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_23             1 2 816 816_splitncnn_0 816_splitncnn_1
+Concat                   Concat_95                4 1 808_splitncnn_2 810_splitncnn_1 813_splitncnn_1 816_splitncnn_1 817
+Convolution              Conv_96                  1 1 817 819 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_98                5 1 808_splitncnn_1 810_splitncnn_0 813_splitncnn_0 816_splitncnn_0 819 820
+Convolution              Conv_99                  1 1 820 821 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_102                  2 1 821 808_splitncnn_0 824 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_105                  2 1 824 776_splitncnn_0 827 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_24             1 7 827 827_splitncnn_0 827_splitncnn_1 827_splitncnn_2 827_splitncnn_3 827_splitncnn_4 827_splitncnn_5 827_splitncnn_6
+Convolution              Conv_106                 1 1 827_splitncnn_6 829 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_25             1 4 829 829_splitncnn_0 829_splitncnn_1 829_splitncnn_2 829_splitncnn_3
+Concat                   Concat_108               2 1 827_splitncnn_5 829_splitncnn_3 830
+Convolution              Conv_109                 1 1 830 832 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_26             1 3 832 832_splitncnn_0 832_splitncnn_1 832_splitncnn_2
+Concat                   Concat_111               3 1 827_splitncnn_4 829_splitncnn_2 832_splitncnn_2 833
+Convolution              Conv_112                 1 1 833 835 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_27             1 2 835 835_splitncnn_0 835_splitncnn_1
+Concat                   Concat_114               4 1 827_splitncnn_3 829_splitncnn_1 832_splitncnn_1 835_splitncnn_1 836
+Convolution              Conv_115                 1 1 836 838 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_117               5 1 827_splitncnn_2 829_splitncnn_0 832_splitncnn_0 835_splitncnn_0 838 839
+Convolution              Conv_118                 1 1 839 840 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_121                  2 1 840 827_splitncnn_1 843 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_28             1 6 843 843_splitncnn_0 843_splitncnn_1 843_splitncnn_2 843_splitncnn_3 843_splitncnn_4 843_splitncnn_5
+Convolution              Conv_122                 1 1 843_splitncnn_5 845 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_29             1 4 845 845_splitncnn_0 845_splitncnn_1 845_splitncnn_2 845_splitncnn_3
+Concat                   Concat_124               2 1 843_splitncnn_4 845_splitncnn_3 846
+Convolution              Conv_125                 1 1 846 848 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_30             1 3 848 848_splitncnn_0 848_splitncnn_1 848_splitncnn_2
+Concat                   Concat_127               3 1 843_splitncnn_3 845_splitncnn_2 848_splitncnn_2 849
+Convolution              Conv_128                 1 1 849 851 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_31             1 2 851 851_splitncnn_0 851_splitncnn_1
+Concat                   Concat_130               4 1 843_splitncnn_2 845_splitncnn_1 848_splitncnn_1 851_splitncnn_1 852
+Convolution              Conv_131                 1 1 852 854 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_133               5 1 843_splitncnn_1 845_splitncnn_0 848_splitncnn_0 851_splitncnn_0 854 855
+Convolution              Conv_134                 1 1 855 856 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_137                  2 1 856 843_splitncnn_0 859 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_32             1 6 859 859_splitncnn_0 859_splitncnn_1 859_splitncnn_2 859_splitncnn_3 859_splitncnn_4 859_splitncnn_5
+Convolution              Conv_138                 1 1 859_splitncnn_5 861 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_33             1 4 861 861_splitncnn_0 861_splitncnn_1 861_splitncnn_2 861_splitncnn_3
+Concat                   Concat_140               2 1 859_splitncnn_4 861_splitncnn_3 862
+Convolution              Conv_141                 1 1 862 864 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_34             1 3 864 864_splitncnn_0 864_splitncnn_1 864_splitncnn_2
+Concat                   Concat_143               3 1 859_splitncnn_3 861_splitncnn_2 864_splitncnn_2 865
+Convolution              Conv_144                 1 1 865 867 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_35             1 2 867 867_splitncnn_0 867_splitncnn_1
+Concat                   Concat_146               4 1 859_splitncnn_2 861_splitncnn_1 864_splitncnn_1 867_splitncnn_1 868
+Convolution              Conv_147                 1 1 868 870 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_149               5 1 859_splitncnn_1 861_splitncnn_0 864_splitncnn_0 867_splitncnn_0 870 871
+Convolution              Conv_150                 1 1 871 872 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_153                  2 1 872 859_splitncnn_0 875 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_156                  2 1 875 827_splitncnn_0 878 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_36             1 7 878 878_splitncnn_0 878_splitncnn_1 878_splitncnn_2 878_splitncnn_3 878_splitncnn_4 878_splitncnn_5 878_splitncnn_6
+Convolution              Conv_157                 1 1 878_splitncnn_6 880 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_37             1 4 880 880_splitncnn_0 880_splitncnn_1 880_splitncnn_2 880_splitncnn_3
+Concat                   Concat_159               2 1 878_splitncnn_5 880_splitncnn_3 881
+Convolution              Conv_160                 1 1 881 883 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_38             1 3 883 883_splitncnn_0 883_splitncnn_1 883_splitncnn_2
+Concat                   Concat_162               3 1 878_splitncnn_4 880_splitncnn_2 883_splitncnn_2 884
+Convolution              Conv_163                 1 1 884 886 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_39             1 2 886 886_splitncnn_0 886_splitncnn_1
+Concat                   Concat_165               4 1 878_splitncnn_3 880_splitncnn_1 883_splitncnn_1 886_splitncnn_1 887
+Convolution              Conv_166                 1 1 887 889 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_168               5 1 878_splitncnn_2 880_splitncnn_0 883_splitncnn_0 886_splitncnn_0 889 890
+Convolution              Conv_169                 1 1 890 891 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_172                  2 1 891 878_splitncnn_1 894 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_40             1 6 894 894_splitncnn_0 894_splitncnn_1 894_splitncnn_2 894_splitncnn_3 894_splitncnn_4 894_splitncnn_5
+Convolution              Conv_173                 1 1 894_splitncnn_5 896 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_41             1 4 896 896_splitncnn_0 896_splitncnn_1 896_splitncnn_2 896_splitncnn_3
+Concat                   Concat_175               2 1 894_splitncnn_4 896_splitncnn_3 897
+Convolution              Conv_176                 1 1 897 899 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_42             1 3 899 899_splitncnn_0 899_splitncnn_1 899_splitncnn_2
+Concat                   Concat_178               3 1 894_splitncnn_3 896_splitncnn_2 899_splitncnn_2 900
+Convolution              Conv_179                 1 1 900 902 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_43             1 2 902 902_splitncnn_0 902_splitncnn_1
+Concat                   Concat_181               4 1 894_splitncnn_2 896_splitncnn_1 899_splitncnn_1 902_splitncnn_1 903
+Convolution              Conv_182                 1 1 903 905 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_184               5 1 894_splitncnn_1 896_splitncnn_0 899_splitncnn_0 902_splitncnn_0 905 906
+Convolution              Conv_185                 1 1 906 907 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_188                  2 1 907 894_splitncnn_0 910 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_44             1 6 910 910_splitncnn_0 910_splitncnn_1 910_splitncnn_2 910_splitncnn_3 910_splitncnn_4 910_splitncnn_5
+Convolution              Conv_189                 1 1 910_splitncnn_5 912 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_45             1 4 912 912_splitncnn_0 912_splitncnn_1 912_splitncnn_2 912_splitncnn_3
+Concat                   Concat_191               2 1 910_splitncnn_4 912_splitncnn_3 913
+Convolution              Conv_192                 1 1 913 915 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_46             1 3 915 915_splitncnn_0 915_splitncnn_1 915_splitncnn_2
+Concat                   Concat_194               3 1 910_splitncnn_3 912_splitncnn_2 915_splitncnn_2 916
+Convolution              Conv_195                 1 1 916 918 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_47             1 2 918 918_splitncnn_0 918_splitncnn_1
+Concat                   Concat_197               4 1 910_splitncnn_2 912_splitncnn_1 915_splitncnn_1 918_splitncnn_1 919
+Convolution              Conv_198                 1 1 919 921 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_200               5 1 910_splitncnn_1 912_splitncnn_0 915_splitncnn_0 918_splitncnn_0 921 922
+Convolution              Conv_201                 1 1 922 923 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_204                  2 1 923 910_splitncnn_0 926 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_207                  2 1 926 878_splitncnn_0 929 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_48             1 7 929 929_splitncnn_0 929_splitncnn_1 929_splitncnn_2 929_splitncnn_3 929_splitncnn_4 929_splitncnn_5 929_splitncnn_6
+Convolution              Conv_208                 1 1 929_splitncnn_6 931 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_49             1 4 931 931_splitncnn_0 931_splitncnn_1 931_splitncnn_2 931_splitncnn_3
+Concat                   Concat_210               2 1 929_splitncnn_5 931_splitncnn_3 932
+Convolution              Conv_211                 1 1 932 934 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_50             1 3 934 934_splitncnn_0 934_splitncnn_1 934_splitncnn_2
+Concat                   Concat_213               3 1 929_splitncnn_4 931_splitncnn_2 934_splitncnn_2 935
+Convolution              Conv_214                 1 1 935 937 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_51             1 2 937 937_splitncnn_0 937_splitncnn_1
+Concat                   Concat_216               4 1 929_splitncnn_3 931_splitncnn_1 934_splitncnn_1 937_splitncnn_1 938
+Convolution              Conv_217                 1 1 938 940 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_219               5 1 929_splitncnn_2 931_splitncnn_0 934_splitncnn_0 937_splitncnn_0 940 941
+Convolution              Conv_220                 1 1 941 942 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_223                  2 1 942 929_splitncnn_1 945 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_52             1 6 945 945_splitncnn_0 945_splitncnn_1 945_splitncnn_2 945_splitncnn_3 945_splitncnn_4 945_splitncnn_5
+Convolution              Conv_224                 1 1 945_splitncnn_5 947 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_53             1 4 947 947_splitncnn_0 947_splitncnn_1 947_splitncnn_2 947_splitncnn_3
+Concat                   Concat_226               2 1 945_splitncnn_4 947_splitncnn_3 948
+Convolution              Conv_227                 1 1 948 950 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_54             1 3 950 950_splitncnn_0 950_splitncnn_1 950_splitncnn_2
+Concat                   Concat_229               3 1 945_splitncnn_3 947_splitncnn_2 950_splitncnn_2 951
+Convolution              Conv_230                 1 1 951 953 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_55             1 2 953 953_splitncnn_0 953_splitncnn_1
+Concat                   Concat_232               4 1 945_splitncnn_2 947_splitncnn_1 950_splitncnn_1 953_splitncnn_1 954
+Convolution              Conv_233                 1 1 954 956 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_235               5 1 945_splitncnn_1 947_splitncnn_0 950_splitncnn_0 953_splitncnn_0 956 957
+Convolution              Conv_236                 1 1 957 958 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_239                  2 1 958 945_splitncnn_0 961 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_56             1 6 961 961_splitncnn_0 961_splitncnn_1 961_splitncnn_2 961_splitncnn_3 961_splitncnn_4 961_splitncnn_5
+Convolution              Conv_240                 1 1 961_splitncnn_5 963 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_57             1 4 963 963_splitncnn_0 963_splitncnn_1 963_splitncnn_2 963_splitncnn_3
+Concat                   Concat_242               2 1 961_splitncnn_4 963_splitncnn_3 964
+Convolution              Conv_243                 1 1 964 966 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_58             1 3 966 966_splitncnn_0 966_splitncnn_1 966_splitncnn_2
+Concat                   Concat_245               3 1 961_splitncnn_3 963_splitncnn_2 966_splitncnn_2 967
+Convolution              Conv_246                 1 1 967 969 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_59             1 2 969 969_splitncnn_0 969_splitncnn_1
+Concat                   Concat_248               4 1 961_splitncnn_2 963_splitncnn_1 966_splitncnn_1 969_splitncnn_1 970
+Convolution              Conv_249                 1 1 970 972 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_251               5 1 961_splitncnn_1 963_splitncnn_0 966_splitncnn_0 969_splitncnn_0 972 973
+Convolution              Conv_252                 1 1 973 974 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_255                  2 1 974 961_splitncnn_0 977 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_258                  2 1 977 929_splitncnn_0 980 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_60             1 7 980 980_splitncnn_0 980_splitncnn_1 980_splitncnn_2 980_splitncnn_3 980_splitncnn_4 980_splitncnn_5 980_splitncnn_6
+Convolution              Conv_259                 1 1 980_splitncnn_6 982 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_61             1 4 982 982_splitncnn_0 982_splitncnn_1 982_splitncnn_2 982_splitncnn_3
+Concat                   Concat_261               2 1 980_splitncnn_5 982_splitncnn_3 983
+Convolution              Conv_262                 1 1 983 985 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_62             1 3 985 985_splitncnn_0 985_splitncnn_1 985_splitncnn_2
+Concat                   Concat_264               3 1 980_splitncnn_4 982_splitncnn_2 985_splitncnn_2 986
+Convolution              Conv_265                 1 1 986 988 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_63             1 2 988 988_splitncnn_0 988_splitncnn_1
+Concat                   Concat_267               4 1 980_splitncnn_3 982_splitncnn_1 985_splitncnn_1 988_splitncnn_1 989
+Convolution              Conv_268                 1 1 989 991 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_270               5 1 980_splitncnn_2 982_splitncnn_0 985_splitncnn_0 988_splitncnn_0 991 992
+Convolution              Conv_271                 1 1 992 993 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_274                  2 1 993 980_splitncnn_1 996 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_64             1 6 996 996_splitncnn_0 996_splitncnn_1 996_splitncnn_2 996_splitncnn_3 996_splitncnn_4 996_splitncnn_5
+Convolution              Conv_275                 1 1 996_splitncnn_5 998 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_65             1 4 998 998_splitncnn_0 998_splitncnn_1 998_splitncnn_2 998_splitncnn_3
+Concat                   Concat_277               2 1 996_splitncnn_4 998_splitncnn_3 999
+Convolution              Conv_278                 1 1 999 1001 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_66             1 3 1001 1001_splitncnn_0 1001_splitncnn_1 1001_splitncnn_2
+Concat                   Concat_280               3 1 996_splitncnn_3 998_splitncnn_2 1001_splitncnn_2 1002
+Convolution              Conv_281                 1 1 1002 1004 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_67             1 2 1004 1004_splitncnn_0 1004_splitncnn_1
+Concat                   Concat_283               4 1 996_splitncnn_2 998_splitncnn_1 1001_splitncnn_1 1004_splitncnn_1 1005
+Convolution              Conv_284                 1 1 1005 1007 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_286               5 1 996_splitncnn_1 998_splitncnn_0 1001_splitncnn_0 1004_splitncnn_0 1007 1008
+Convolution              Conv_287                 1 1 1008 1009 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_290                  2 1 1009 996_splitncnn_0 1012 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_68             1 6 1012 1012_splitncnn_0 1012_splitncnn_1 1012_splitncnn_2 1012_splitncnn_3 1012_splitncnn_4 1012_splitncnn_5
+Convolution              Conv_291                 1 1 1012_splitncnn_5 1014 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_69             1 4 1014 1014_splitncnn_0 1014_splitncnn_1 1014_splitncnn_2 1014_splitncnn_3
+Concat                   Concat_293               2 1 1012_splitncnn_4 1014_splitncnn_3 1015
+Convolution              Conv_294                 1 1 1015 1017 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_70             1 3 1017 1017_splitncnn_0 1017_splitncnn_1 1017_splitncnn_2
+Concat                   Concat_296               3 1 1012_splitncnn_3 1014_splitncnn_2 1017_splitncnn_2 1018
+Convolution              Conv_297                 1 1 1018 1020 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_71             1 2 1020 1020_splitncnn_0 1020_splitncnn_1
+Concat                   Concat_299               4 1 1012_splitncnn_2 1014_splitncnn_1 1017_splitncnn_1 1020_splitncnn_1 1021
+Convolution              Conv_300                 1 1 1021 1023 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_302               5 1 1012_splitncnn_1 1014_splitncnn_0 1017_splitncnn_0 1020_splitncnn_0 1023 1024
+Convolution              Conv_303                 1 1 1024 1025 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_306                  2 1 1025 1012_splitncnn_0 1028 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_309                  2 1 1028 980_splitncnn_0 1031 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_72             1 7 1031 1031_splitncnn_0 1031_splitncnn_1 1031_splitncnn_2 1031_splitncnn_3 1031_splitncnn_4 1031_splitncnn_5 1031_splitncnn_6
+Convolution              Conv_310                 1 1 1031_splitncnn_6 1033 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_73             1 4 1033 1033_splitncnn_0 1033_splitncnn_1 1033_splitncnn_2 1033_splitncnn_3
+Concat                   Concat_312               2 1 1031_splitncnn_5 1033_splitncnn_3 1034
+Convolution              Conv_313                 1 1 1034 1036 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_74             1 3 1036 1036_splitncnn_0 1036_splitncnn_1 1036_splitncnn_2
+Concat                   Concat_315               3 1 1031_splitncnn_4 1033_splitncnn_2 1036_splitncnn_2 1037
+Convolution              Conv_316                 1 1 1037 1039 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_75             1 2 1039 1039_splitncnn_0 1039_splitncnn_1
+Concat                   Concat_318               4 1 1031_splitncnn_3 1033_splitncnn_1 1036_splitncnn_1 1039_splitncnn_1 1040
+Convolution              Conv_319                 1 1 1040 1042 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_321               5 1 1031_splitncnn_2 1033_splitncnn_0 1036_splitncnn_0 1039_splitncnn_0 1042 1043
+Convolution              Conv_322                 1 1 1043 1044 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_325                  2 1 1044 1031_splitncnn_1 1047 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_76             1 6 1047 1047_splitncnn_0 1047_splitncnn_1 1047_splitncnn_2 1047_splitncnn_3 1047_splitncnn_4 1047_splitncnn_5
+Convolution              Conv_326                 1 1 1047_splitncnn_5 1049 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_77             1 4 1049 1049_splitncnn_0 1049_splitncnn_1 1049_splitncnn_2 1049_splitncnn_3
+Concat                   Concat_328               2 1 1047_splitncnn_4 1049_splitncnn_3 1050
+Convolution              Conv_329                 1 1 1050 1052 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_78             1 3 1052 1052_splitncnn_0 1052_splitncnn_1 1052_splitncnn_2
+Concat                   Concat_331               3 1 1047_splitncnn_3 1049_splitncnn_2 1052_splitncnn_2 1053
+Convolution              Conv_332                 1 1 1053 1055 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_79             1 2 1055 1055_splitncnn_0 1055_splitncnn_1
+Concat                   Concat_334               4 1 1047_splitncnn_2 1049_splitncnn_1 1052_splitncnn_1 1055_splitncnn_1 1056
+Convolution              Conv_335                 1 1 1056 1058 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_337               5 1 1047_splitncnn_1 1049_splitncnn_0 1052_splitncnn_0 1055_splitncnn_0 1058 1059
+Convolution              Conv_338                 1 1 1059 1060 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_341                  2 1 1060 1047_splitncnn_0 1063 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_80             1 6 1063 1063_splitncnn_0 1063_splitncnn_1 1063_splitncnn_2 1063_splitncnn_3 1063_splitncnn_4 1063_splitncnn_5
+Convolution              Conv_342                 1 1 1063_splitncnn_5 1065 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_81             1 4 1065 1065_splitncnn_0 1065_splitncnn_1 1065_splitncnn_2 1065_splitncnn_3
+Concat                   Concat_344               2 1 1063_splitncnn_4 1065_splitncnn_3 1066
+Convolution              Conv_345                 1 1 1066 1068 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_82             1 3 1068 1068_splitncnn_0 1068_splitncnn_1 1068_splitncnn_2
+Concat                   Concat_347               3 1 1063_splitncnn_3 1065_splitncnn_2 1068_splitncnn_2 1069
+Convolution              Conv_348                 1 1 1069 1071 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_83             1 2 1071 1071_splitncnn_0 1071_splitncnn_1
+Concat                   Concat_350               4 1 1063_splitncnn_2 1065_splitncnn_1 1068_splitncnn_1 1071_splitncnn_1 1072
+Convolution              Conv_351                 1 1 1072 1074 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_353               5 1 1063_splitncnn_1 1065_splitncnn_0 1068_splitncnn_0 1071_splitncnn_0 1074 1075
+Convolution              Conv_354                 1 1 1075 1076 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_357                  2 1 1076 1063_splitncnn_0 1079 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_360                  2 1 1079 1031_splitncnn_0 1082 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_84             1 7 1082 1082_splitncnn_0 1082_splitncnn_1 1082_splitncnn_2 1082_splitncnn_3 1082_splitncnn_4 1082_splitncnn_5 1082_splitncnn_6
+Convolution              Conv_361                 1 1 1082_splitncnn_6 1084 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_85             1 4 1084 1084_splitncnn_0 1084_splitncnn_1 1084_splitncnn_2 1084_splitncnn_3
+Concat                   Concat_363               2 1 1082_splitncnn_5 1084_splitncnn_3 1085
+Convolution              Conv_364                 1 1 1085 1087 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_86             1 3 1087 1087_splitncnn_0 1087_splitncnn_1 1087_splitncnn_2
+Concat                   Concat_366               3 1 1082_splitncnn_4 1084_splitncnn_2 1087_splitncnn_2 1088
+Convolution              Conv_367                 1 1 1088 1090 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_87             1 2 1090 1090_splitncnn_0 1090_splitncnn_1
+Concat                   Concat_369               4 1 1082_splitncnn_3 1084_splitncnn_1 1087_splitncnn_1 1090_splitncnn_1 1091
+Convolution              Conv_370                 1 1 1091 1093 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_372               5 1 1082_splitncnn_2 1084_splitncnn_0 1087_splitncnn_0 1090_splitncnn_0 1093 1094
+Convolution              Conv_373                 1 1 1094 1095 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_376                  2 1 1095 1082_splitncnn_1 1098 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_88             1 6 1098 1098_splitncnn_0 1098_splitncnn_1 1098_splitncnn_2 1098_splitncnn_3 1098_splitncnn_4 1098_splitncnn_5
+Convolution              Conv_377                 1 1 1098_splitncnn_5 1100 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_89             1 4 1100 1100_splitncnn_0 1100_splitncnn_1 1100_splitncnn_2 1100_splitncnn_3
+Concat                   Concat_379               2 1 1098_splitncnn_4 1100_splitncnn_3 1101
+Convolution              Conv_380                 1 1 1101 1103 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_90             1 3 1103 1103_splitncnn_0 1103_splitncnn_1 1103_splitncnn_2
+Concat                   Concat_382               3 1 1098_splitncnn_3 1100_splitncnn_2 1103_splitncnn_2 1104
+Convolution              Conv_383                 1 1 1104 1106 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_91             1 2 1106 1106_splitncnn_0 1106_splitncnn_1
+Concat                   Concat_385               4 1 1098_splitncnn_2 1100_splitncnn_1 1103_splitncnn_1 1106_splitncnn_1 1107
+Convolution              Conv_386                 1 1 1107 1109 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_388               5 1 1098_splitncnn_1 1100_splitncnn_0 1103_splitncnn_0 1106_splitncnn_0 1109 1110
+Convolution              Conv_389                 1 1 1110 1111 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_392                  2 1 1111 1098_splitncnn_0 1114 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_92             1 6 1114 1114_splitncnn_0 1114_splitncnn_1 1114_splitncnn_2 1114_splitncnn_3 1114_splitncnn_4 1114_splitncnn_5
+Convolution              Conv_393                 1 1 1114_splitncnn_5 1116 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_93             1 4 1116 1116_splitncnn_0 1116_splitncnn_1 1116_splitncnn_2 1116_splitncnn_3
+Concat                   Concat_395               2 1 1114_splitncnn_4 1116_splitncnn_3 1117
+Convolution              Conv_396                 1 1 1117 1119 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_94             1 3 1119 1119_splitncnn_0 1119_splitncnn_1 1119_splitncnn_2
+Concat                   Concat_398               3 1 1114_splitncnn_3 1116_splitncnn_2 1119_splitncnn_2 1120
+Convolution              Conv_399                 1 1 1120 1122 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_95             1 2 1122 1122_splitncnn_0 1122_splitncnn_1
+Concat                   Concat_401               4 1 1114_splitncnn_2 1116_splitncnn_1 1119_splitncnn_1 1122_splitncnn_1 1123
+Convolution              Conv_402                 1 1 1123 1125 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_404               5 1 1114_splitncnn_1 1116_splitncnn_0 1119_splitncnn_0 1122_splitncnn_0 1125 1126
+Convolution              Conv_405                 1 1 1126 1127 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_408                  2 1 1127 1114_splitncnn_0 1130 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_411                  2 1 1130 1082_splitncnn_0 1133 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_96             1 7 1133 1133_splitncnn_0 1133_splitncnn_1 1133_splitncnn_2 1133_splitncnn_3 1133_splitncnn_4 1133_splitncnn_5 1133_splitncnn_6
+Convolution              Conv_412                 1 1 1133_splitncnn_6 1135 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_97             1 4 1135 1135_splitncnn_0 1135_splitncnn_1 1135_splitncnn_2 1135_splitncnn_3
+Concat                   Concat_414               2 1 1133_splitncnn_5 1135_splitncnn_3 1136
+Convolution              Conv_415                 1 1 1136 1138 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_98             1 3 1138 1138_splitncnn_0 1138_splitncnn_1 1138_splitncnn_2
+Concat                   Concat_417               3 1 1133_splitncnn_4 1135_splitncnn_2 1138_splitncnn_2 1139
+Convolution              Conv_418                 1 1 1139 1141 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_99             1 2 1141 1141_splitncnn_0 1141_splitncnn_1
+Concat                   Concat_420               4 1 1133_splitncnn_3 1135_splitncnn_1 1138_splitncnn_1 1141_splitncnn_1 1142
+Convolution              Conv_421                 1 1 1142 1144 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_423               5 1 1133_splitncnn_2 1135_splitncnn_0 1138_splitncnn_0 1141_splitncnn_0 1144 1145
+Convolution              Conv_424                 1 1 1145 1146 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_427                  2 1 1146 1133_splitncnn_1 1149 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_100            1 6 1149 1149_splitncnn_0 1149_splitncnn_1 1149_splitncnn_2 1149_splitncnn_3 1149_splitncnn_4 1149_splitncnn_5
+Convolution              Conv_428                 1 1 1149_splitncnn_5 1151 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_101            1 4 1151 1151_splitncnn_0 1151_splitncnn_1 1151_splitncnn_2 1151_splitncnn_3
+Concat                   Concat_430               2 1 1149_splitncnn_4 1151_splitncnn_3 1152
+Convolution              Conv_431                 1 1 1152 1154 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_102            1 3 1154 1154_splitncnn_0 1154_splitncnn_1 1154_splitncnn_2
+Concat                   Concat_433               3 1 1149_splitncnn_3 1151_splitncnn_2 1154_splitncnn_2 1155
+Convolution              Conv_434                 1 1 1155 1157 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_103            1 2 1157 1157_splitncnn_0 1157_splitncnn_1
+Concat                   Concat_436               4 1 1149_splitncnn_2 1151_splitncnn_1 1154_splitncnn_1 1157_splitncnn_1 1158
+Convolution              Conv_437                 1 1 1158 1160 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_439               5 1 1149_splitncnn_1 1151_splitncnn_0 1154_splitncnn_0 1157_splitncnn_0 1160 1161
+Convolution              Conv_440                 1 1 1161 1162 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_443                  2 1 1162 1149_splitncnn_0 1165 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_104            1 6 1165 1165_splitncnn_0 1165_splitncnn_1 1165_splitncnn_2 1165_splitncnn_3 1165_splitncnn_4 1165_splitncnn_5
+Convolution              Conv_444                 1 1 1165_splitncnn_5 1167 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_105            1 4 1167 1167_splitncnn_0 1167_splitncnn_1 1167_splitncnn_2 1167_splitncnn_3
+Concat                   Concat_446               2 1 1165_splitncnn_4 1167_splitncnn_3 1168
+Convolution              Conv_447                 1 1 1168 1170 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_106            1 3 1170 1170_splitncnn_0 1170_splitncnn_1 1170_splitncnn_2
+Concat                   Concat_449               3 1 1165_splitncnn_3 1167_splitncnn_2 1170_splitncnn_2 1171
+Convolution              Conv_450                 1 1 1171 1173 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_107            1 2 1173 1173_splitncnn_0 1173_splitncnn_1
+Concat                   Concat_452               4 1 1165_splitncnn_2 1167_splitncnn_1 1170_splitncnn_1 1173_splitncnn_1 1174
+Convolution              Conv_453                 1 1 1174 1176 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_455               5 1 1165_splitncnn_1 1167_splitncnn_0 1170_splitncnn_0 1173_splitncnn_0 1176 1177
+Convolution              Conv_456                 1 1 1177 1178 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_459                  2 1 1178 1165_splitncnn_0 1181 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_462                  2 1 1181 1133_splitncnn_0 1184 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_108            1 7 1184 1184_splitncnn_0 1184_splitncnn_1 1184_splitncnn_2 1184_splitncnn_3 1184_splitncnn_4 1184_splitncnn_5 1184_splitncnn_6
+Convolution              Conv_463                 1 1 1184_splitncnn_6 1186 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_109            1 4 1186 1186_splitncnn_0 1186_splitncnn_1 1186_splitncnn_2 1186_splitncnn_3
+Concat                   Concat_465               2 1 1184_splitncnn_5 1186_splitncnn_3 1187
+Convolution              Conv_466                 1 1 1187 1189 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_110            1 3 1189 1189_splitncnn_0 1189_splitncnn_1 1189_splitncnn_2
+Concat                   Concat_468               3 1 1184_splitncnn_4 1186_splitncnn_2 1189_splitncnn_2 1190
+Convolution              Conv_469                 1 1 1190 1192 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_111            1 2 1192 1192_splitncnn_0 1192_splitncnn_1
+Concat                   Concat_471               4 1 1184_splitncnn_3 1186_splitncnn_1 1189_splitncnn_1 1192_splitncnn_1 1193
+Convolution              Conv_472                 1 1 1193 1195 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_474               5 1 1184_splitncnn_2 1186_splitncnn_0 1189_splitncnn_0 1192_splitncnn_0 1195 1196
+Convolution              Conv_475                 1 1 1196 1197 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_478                  2 1 1197 1184_splitncnn_1 1200 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_112            1 6 1200 1200_splitncnn_0 1200_splitncnn_1 1200_splitncnn_2 1200_splitncnn_3 1200_splitncnn_4 1200_splitncnn_5
+Convolution              Conv_479                 1 1 1200_splitncnn_5 1202 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_113            1 4 1202 1202_splitncnn_0 1202_splitncnn_1 1202_splitncnn_2 1202_splitncnn_3
+Concat                   Concat_481               2 1 1200_splitncnn_4 1202_splitncnn_3 1203
+Convolution              Conv_482                 1 1 1203 1205 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_114            1 3 1205 1205_splitncnn_0 1205_splitncnn_1 1205_splitncnn_2
+Concat                   Concat_484               3 1 1200_splitncnn_3 1202_splitncnn_2 1205_splitncnn_2 1206
+Convolution              Conv_485                 1 1 1206 1208 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_115            1 2 1208 1208_splitncnn_0 1208_splitncnn_1
+Concat                   Concat_487               4 1 1200_splitncnn_2 1202_splitncnn_1 1205_splitncnn_1 1208_splitncnn_1 1209
+Convolution              Conv_488                 1 1 1209 1211 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_490               5 1 1200_splitncnn_1 1202_splitncnn_0 1205_splitncnn_0 1208_splitncnn_0 1211 1212
+Convolution              Conv_491                 1 1 1212 1213 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_494                  2 1 1213 1200_splitncnn_0 1216 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_116            1 6 1216 1216_splitncnn_0 1216_splitncnn_1 1216_splitncnn_2 1216_splitncnn_3 1216_splitncnn_4 1216_splitncnn_5
+Convolution              Conv_495                 1 1 1216_splitncnn_5 1218 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_117            1 4 1218 1218_splitncnn_0 1218_splitncnn_1 1218_splitncnn_2 1218_splitncnn_3
+Concat                   Concat_497               2 1 1216_splitncnn_4 1218_splitncnn_3 1219
+Convolution              Conv_498                 1 1 1219 1221 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_118            1 3 1221 1221_splitncnn_0 1221_splitncnn_1 1221_splitncnn_2
+Concat                   Concat_500               3 1 1216_splitncnn_3 1218_splitncnn_2 1221_splitncnn_2 1222
+Convolution              Conv_501                 1 1 1222 1224 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_119            1 2 1224 1224_splitncnn_0 1224_splitncnn_1
+Concat                   Concat_503               4 1 1216_splitncnn_2 1218_splitncnn_1 1221_splitncnn_1 1224_splitncnn_1 1225
+Convolution              Conv_504                 1 1 1225 1227 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_506               5 1 1216_splitncnn_1 1218_splitncnn_0 1221_splitncnn_0 1224_splitncnn_0 1227 1228
+Convolution              Conv_507                 1 1 1228 1229 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_510                  2 1 1229 1216_splitncnn_0 1232 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_513                  2 1 1232 1184_splitncnn_0 1235 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_120            1 7 1235 1235_splitncnn_0 1235_splitncnn_1 1235_splitncnn_2 1235_splitncnn_3 1235_splitncnn_4 1235_splitncnn_5 1235_splitncnn_6
+Convolution              Conv_514                 1 1 1235_splitncnn_6 1237 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_121            1 4 1237 1237_splitncnn_0 1237_splitncnn_1 1237_splitncnn_2 1237_splitncnn_3
+Concat                   Concat_516               2 1 1235_splitncnn_5 1237_splitncnn_3 1238
+Convolution              Conv_517                 1 1 1238 1240 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_122            1 3 1240 1240_splitncnn_0 1240_splitncnn_1 1240_splitncnn_2
+Concat                   Concat_519               3 1 1235_splitncnn_4 1237_splitncnn_2 1240_splitncnn_2 1241
+Convolution              Conv_520                 1 1 1241 1243 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_123            1 2 1243 1243_splitncnn_0 1243_splitncnn_1
+Concat                   Concat_522               4 1 1235_splitncnn_3 1237_splitncnn_1 1240_splitncnn_1 1243_splitncnn_1 1244
+Convolution              Conv_523                 1 1 1244 1246 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_525               5 1 1235_splitncnn_2 1237_splitncnn_0 1240_splitncnn_0 1243_splitncnn_0 1246 1247
+Convolution              Conv_526                 1 1 1247 1248 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_529                  2 1 1248 1235_splitncnn_1 1251 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_124            1 6 1251 1251_splitncnn_0 1251_splitncnn_1 1251_splitncnn_2 1251_splitncnn_3 1251_splitncnn_4 1251_splitncnn_5
+Convolution              Conv_530                 1 1 1251_splitncnn_5 1253 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_125            1 4 1253 1253_splitncnn_0 1253_splitncnn_1 1253_splitncnn_2 1253_splitncnn_3
+Concat                   Concat_532               2 1 1251_splitncnn_4 1253_splitncnn_3 1254
+Convolution              Conv_533                 1 1 1254 1256 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_126            1 3 1256 1256_splitncnn_0 1256_splitncnn_1 1256_splitncnn_2
+Concat                   Concat_535               3 1 1251_splitncnn_3 1253_splitncnn_2 1256_splitncnn_2 1257
+Convolution              Conv_536                 1 1 1257 1259 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_127            1 2 1259 1259_splitncnn_0 1259_splitncnn_1
+Concat                   Concat_538               4 1 1251_splitncnn_2 1253_splitncnn_1 1256_splitncnn_1 1259_splitncnn_1 1260
+Convolution              Conv_539                 1 1 1260 1262 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_541               5 1 1251_splitncnn_1 1253_splitncnn_0 1256_splitncnn_0 1259_splitncnn_0 1262 1263
+Convolution              Conv_542                 1 1 1263 1264 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_545                  2 1 1264 1251_splitncnn_0 1267 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_128            1 6 1267 1267_splitncnn_0 1267_splitncnn_1 1267_splitncnn_2 1267_splitncnn_3 1267_splitncnn_4 1267_splitncnn_5
+Convolution              Conv_546                 1 1 1267_splitncnn_5 1269 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_129            1 4 1269 1269_splitncnn_0 1269_splitncnn_1 1269_splitncnn_2 1269_splitncnn_3
+Concat                   Concat_548               2 1 1267_splitncnn_4 1269_splitncnn_3 1270
+Convolution              Conv_549                 1 1 1270 1272 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_130            1 3 1272 1272_splitncnn_0 1272_splitncnn_1 1272_splitncnn_2
+Concat                   Concat_551               3 1 1267_splitncnn_3 1269_splitncnn_2 1272_splitncnn_2 1273
+Convolution              Conv_552                 1 1 1273 1275 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_131            1 2 1275 1275_splitncnn_0 1275_splitncnn_1
+Concat                   Concat_554               4 1 1267_splitncnn_2 1269_splitncnn_1 1272_splitncnn_1 1275_splitncnn_1 1276
+Convolution              Conv_555                 1 1 1276 1278 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_557               5 1 1267_splitncnn_1 1269_splitncnn_0 1272_splitncnn_0 1275_splitncnn_0 1278 1279
+Convolution              Conv_558                 1 1 1279 1280 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_561                  2 1 1280 1267_splitncnn_0 1283 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_564                  2 1 1283 1235_splitncnn_0 1286 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_132            1 7 1286 1286_splitncnn_0 1286_splitncnn_1 1286_splitncnn_2 1286_splitncnn_3 1286_splitncnn_4 1286_splitncnn_5 1286_splitncnn_6
+Convolution              Conv_565                 1 1 1286_splitncnn_6 1288 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_133            1 4 1288 1288_splitncnn_0 1288_splitncnn_1 1288_splitncnn_2 1288_splitncnn_3
+Concat                   Concat_567               2 1 1286_splitncnn_5 1288_splitncnn_3 1289
+Convolution              Conv_568                 1 1 1289 1291 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_134            1 3 1291 1291_splitncnn_0 1291_splitncnn_1 1291_splitncnn_2
+Concat                   Concat_570               3 1 1286_splitncnn_4 1288_splitncnn_2 1291_splitncnn_2 1292
+Convolution              Conv_571                 1 1 1292 1294 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_135            1 2 1294 1294_splitncnn_0 1294_splitncnn_1
+Concat                   Concat_573               4 1 1286_splitncnn_3 1288_splitncnn_1 1291_splitncnn_1 1294_splitncnn_1 1295
+Convolution              Conv_574                 1 1 1295 1297 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_576               5 1 1286_splitncnn_2 1288_splitncnn_0 1291_splitncnn_0 1294_splitncnn_0 1297 1298
+Convolution              Conv_577                 1 1 1298 1299 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_580                  2 1 1299 1286_splitncnn_1 1302 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_136            1 6 1302 1302_splitncnn_0 1302_splitncnn_1 1302_splitncnn_2 1302_splitncnn_3 1302_splitncnn_4 1302_splitncnn_5
+Convolution              Conv_581                 1 1 1302_splitncnn_5 1304 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_137            1 4 1304 1304_splitncnn_0 1304_splitncnn_1 1304_splitncnn_2 1304_splitncnn_3
+Concat                   Concat_583               2 1 1302_splitncnn_4 1304_splitncnn_3 1305
+Convolution              Conv_584                 1 1 1305 1307 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_138            1 3 1307 1307_splitncnn_0 1307_splitncnn_1 1307_splitncnn_2
+Concat                   Concat_586               3 1 1302_splitncnn_3 1304_splitncnn_2 1307_splitncnn_2 1308
+Convolution              Conv_587                 1 1 1308 1310 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_139            1 2 1310 1310_splitncnn_0 1310_splitncnn_1
+Concat                   Concat_589               4 1 1302_splitncnn_2 1304_splitncnn_1 1307_splitncnn_1 1310_splitncnn_1 1311
+Convolution              Conv_590                 1 1 1311 1313 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_592               5 1 1302_splitncnn_1 1304_splitncnn_0 1307_splitncnn_0 1310_splitncnn_0 1313 1314
+Convolution              Conv_593                 1 1 1314 1315 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_596                  2 1 1315 1302_splitncnn_0 1318 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_140            1 6 1318 1318_splitncnn_0 1318_splitncnn_1 1318_splitncnn_2 1318_splitncnn_3 1318_splitncnn_4 1318_splitncnn_5
+Convolution              Conv_597                 1 1 1318_splitncnn_5 1320 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_141            1 4 1320 1320_splitncnn_0 1320_splitncnn_1 1320_splitncnn_2 1320_splitncnn_3
+Concat                   Concat_599               2 1 1318_splitncnn_4 1320_splitncnn_3 1321
+Convolution              Conv_600                 1 1 1321 1323 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_142            1 3 1323 1323_splitncnn_0 1323_splitncnn_1 1323_splitncnn_2
+Concat                   Concat_602               3 1 1318_splitncnn_3 1320_splitncnn_2 1323_splitncnn_2 1324
+Convolution              Conv_603                 1 1 1324 1326 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_143            1 2 1326 1326_splitncnn_0 1326_splitncnn_1
+Concat                   Concat_605               4 1 1318_splitncnn_2 1320_splitncnn_1 1323_splitncnn_1 1326_splitncnn_1 1327
+Convolution              Conv_606                 1 1 1327 1329 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_608               5 1 1318_splitncnn_1 1320_splitncnn_0 1323_splitncnn_0 1326_splitncnn_0 1329 1330
+Convolution              Conv_609                 1 1 1330 1331 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_612                  2 1 1331 1318_splitncnn_0 1334 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_615                  2 1 1334 1286_splitncnn_0 1337 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_144            1 7 1337 1337_splitncnn_0 1337_splitncnn_1 1337_splitncnn_2 1337_splitncnn_3 1337_splitncnn_4 1337_splitncnn_5 1337_splitncnn_6
+Convolution              Conv_616                 1 1 1337_splitncnn_6 1339 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_145            1 4 1339 1339_splitncnn_0 1339_splitncnn_1 1339_splitncnn_2 1339_splitncnn_3
+Concat                   Concat_618               2 1 1337_splitncnn_5 1339_splitncnn_3 1340
+Convolution              Conv_619                 1 1 1340 1342 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_146            1 3 1342 1342_splitncnn_0 1342_splitncnn_1 1342_splitncnn_2
+Concat                   Concat_621               3 1 1337_splitncnn_4 1339_splitncnn_2 1342_splitncnn_2 1343
+Convolution              Conv_622                 1 1 1343 1345 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_147            1 2 1345 1345_splitncnn_0 1345_splitncnn_1
+Concat                   Concat_624               4 1 1337_splitncnn_3 1339_splitncnn_1 1342_splitncnn_1 1345_splitncnn_1 1346
+Convolution              Conv_625                 1 1 1346 1348 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_627               5 1 1337_splitncnn_2 1339_splitncnn_0 1342_splitncnn_0 1345_splitncnn_0 1348 1349
+Convolution              Conv_628                 1 1 1349 1350 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_631                  2 1 1350 1337_splitncnn_1 1353 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_148            1 6 1353 1353_splitncnn_0 1353_splitncnn_1 1353_splitncnn_2 1353_splitncnn_3 1353_splitncnn_4 1353_splitncnn_5
+Convolution              Conv_632                 1 1 1353_splitncnn_5 1355 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_149            1 4 1355 1355_splitncnn_0 1355_splitncnn_1 1355_splitncnn_2 1355_splitncnn_3
+Concat                   Concat_634               2 1 1353_splitncnn_4 1355_splitncnn_3 1356
+Convolution              Conv_635                 1 1 1356 1358 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_150            1 3 1358 1358_splitncnn_0 1358_splitncnn_1 1358_splitncnn_2
+Concat                   Concat_637               3 1 1353_splitncnn_3 1355_splitncnn_2 1358_splitncnn_2 1359
+Convolution              Conv_638                 1 1 1359 1361 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_151            1 2 1361 1361_splitncnn_0 1361_splitncnn_1
+Concat                   Concat_640               4 1 1353_splitncnn_2 1355_splitncnn_1 1358_splitncnn_1 1361_splitncnn_1 1362
+Convolution              Conv_641                 1 1 1362 1364 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_643               5 1 1353_splitncnn_1 1355_splitncnn_0 1358_splitncnn_0 1361_splitncnn_0 1364 1365
+Convolution              Conv_644                 1 1 1365 1366 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_647                  2 1 1366 1353_splitncnn_0 1369 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_152            1 6 1369 1369_splitncnn_0 1369_splitncnn_1 1369_splitncnn_2 1369_splitncnn_3 1369_splitncnn_4 1369_splitncnn_5
+Convolution              Conv_648                 1 1 1369_splitncnn_5 1371 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_153            1 4 1371 1371_splitncnn_0 1371_splitncnn_1 1371_splitncnn_2 1371_splitncnn_3
+Concat                   Concat_650               2 1 1369_splitncnn_4 1371_splitncnn_3 1372
+Convolution              Conv_651                 1 1 1372 1374 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_154            1 3 1374 1374_splitncnn_0 1374_splitncnn_1 1374_splitncnn_2
+Concat                   Concat_653               3 1 1369_splitncnn_3 1371_splitncnn_2 1374_splitncnn_2 1375
+Convolution              Conv_654                 1 1 1375 1377 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_155            1 2 1377 1377_splitncnn_0 1377_splitncnn_1
+Concat                   Concat_656               4 1 1369_splitncnn_2 1371_splitncnn_1 1374_splitncnn_1 1377_splitncnn_1 1378
+Convolution              Conv_657                 1 1 1378 1380 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_659               5 1 1369_splitncnn_1 1371_splitncnn_0 1374_splitncnn_0 1377_splitncnn_0 1380 1381
+Convolution              Conv_660                 1 1 1381 1382 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_663                  2 1 1382 1369_splitncnn_0 1385 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_666                  2 1 1385 1337_splitncnn_0 1388 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_156            1 7 1388 1388_splitncnn_0 1388_splitncnn_1 1388_splitncnn_2 1388_splitncnn_3 1388_splitncnn_4 1388_splitncnn_5 1388_splitncnn_6
+Convolution              Conv_667                 1 1 1388_splitncnn_6 1390 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_157            1 4 1390 1390_splitncnn_0 1390_splitncnn_1 1390_splitncnn_2 1390_splitncnn_3
+Concat                   Concat_669               2 1 1388_splitncnn_5 1390_splitncnn_3 1391
+Convolution              Conv_670                 1 1 1391 1393 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_158            1 3 1393 1393_splitncnn_0 1393_splitncnn_1 1393_splitncnn_2
+Concat                   Concat_672               3 1 1388_splitncnn_4 1390_splitncnn_2 1393_splitncnn_2 1394
+Convolution              Conv_673                 1 1 1394 1396 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_159            1 2 1396 1396_splitncnn_0 1396_splitncnn_1
+Concat                   Concat_675               4 1 1388_splitncnn_3 1390_splitncnn_1 1393_splitncnn_1 1396_splitncnn_1 1397
+Convolution              Conv_676                 1 1 1397 1399 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_678               5 1 1388_splitncnn_2 1390_splitncnn_0 1393_splitncnn_0 1396_splitncnn_0 1399 1400
+Convolution              Conv_679                 1 1 1400 1401 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_682                  2 1 1401 1388_splitncnn_1 1404 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_160            1 6 1404 1404_splitncnn_0 1404_splitncnn_1 1404_splitncnn_2 1404_splitncnn_3 1404_splitncnn_4 1404_splitncnn_5
+Convolution              Conv_683                 1 1 1404_splitncnn_5 1406 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_161            1 4 1406 1406_splitncnn_0 1406_splitncnn_1 1406_splitncnn_2 1406_splitncnn_3
+Concat                   Concat_685               2 1 1404_splitncnn_4 1406_splitncnn_3 1407
+Convolution              Conv_686                 1 1 1407 1409 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_162            1 3 1409 1409_splitncnn_0 1409_splitncnn_1 1409_splitncnn_2
+Concat                   Concat_688               3 1 1404_splitncnn_3 1406_splitncnn_2 1409_splitncnn_2 1410
+Convolution              Conv_689                 1 1 1410 1412 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_163            1 2 1412 1412_splitncnn_0 1412_splitncnn_1
+Concat                   Concat_691               4 1 1404_splitncnn_2 1406_splitncnn_1 1409_splitncnn_1 1412_splitncnn_1 1413
+Convolution              Conv_692                 1 1 1413 1415 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_694               5 1 1404_splitncnn_1 1406_splitncnn_0 1409_splitncnn_0 1412_splitncnn_0 1415 1416
+Convolution              Conv_695                 1 1 1416 1417 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_698                  2 1 1417 1404_splitncnn_0 1420 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_164            1 6 1420 1420_splitncnn_0 1420_splitncnn_1 1420_splitncnn_2 1420_splitncnn_3 1420_splitncnn_4 1420_splitncnn_5
+Convolution              Conv_699                 1 1 1420_splitncnn_5 1422 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_165            1 4 1422 1422_splitncnn_0 1422_splitncnn_1 1422_splitncnn_2 1422_splitncnn_3
+Concat                   Concat_701               2 1 1420_splitncnn_4 1422_splitncnn_3 1423
+Convolution              Conv_702                 1 1 1423 1425 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_166            1 3 1425 1425_splitncnn_0 1425_splitncnn_1 1425_splitncnn_2
+Concat                   Concat_704               3 1 1420_splitncnn_3 1422_splitncnn_2 1425_splitncnn_2 1426
+Convolution              Conv_705                 1 1 1426 1428 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_167            1 2 1428 1428_splitncnn_0 1428_splitncnn_1
+Concat                   Concat_707               4 1 1420_splitncnn_2 1422_splitncnn_1 1425_splitncnn_1 1428_splitncnn_1 1429
+Convolution              Conv_708                 1 1 1429 1431 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_710               5 1 1420_splitncnn_1 1422_splitncnn_0 1425_splitncnn_0 1428_splitncnn_0 1431 1432
+Convolution              Conv_711                 1 1 1432 1433 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_714                  2 1 1433 1420_splitncnn_0 1436 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_717                  2 1 1436 1388_splitncnn_0 1439 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_168            1 7 1439 1439_splitncnn_0 1439_splitncnn_1 1439_splitncnn_2 1439_splitncnn_3 1439_splitncnn_4 1439_splitncnn_5 1439_splitncnn_6
+Convolution              Conv_718                 1 1 1439_splitncnn_6 1441 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_169            1 4 1441 1441_splitncnn_0 1441_splitncnn_1 1441_splitncnn_2 1441_splitncnn_3
+Concat                   Concat_720               2 1 1439_splitncnn_5 1441_splitncnn_3 1442
+Convolution              Conv_721                 1 1 1442 1444 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_170            1 3 1444 1444_splitncnn_0 1444_splitncnn_1 1444_splitncnn_2
+Concat                   Concat_723               3 1 1439_splitncnn_4 1441_splitncnn_2 1444_splitncnn_2 1445
+Convolution              Conv_724                 1 1 1445 1447 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_171            1 2 1447 1447_splitncnn_0 1447_splitncnn_1
+Concat                   Concat_726               4 1 1439_splitncnn_3 1441_splitncnn_1 1444_splitncnn_1 1447_splitncnn_1 1448
+Convolution              Conv_727                 1 1 1448 1450 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_729               5 1 1439_splitncnn_2 1441_splitncnn_0 1444_splitncnn_0 1447_splitncnn_0 1450 1451
+Convolution              Conv_730                 1 1 1451 1452 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_733                  2 1 1452 1439_splitncnn_1 1455 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_172            1 6 1455 1455_splitncnn_0 1455_splitncnn_1 1455_splitncnn_2 1455_splitncnn_3 1455_splitncnn_4 1455_splitncnn_5
+Convolution              Conv_734                 1 1 1455_splitncnn_5 1457 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_173            1 4 1457 1457_splitncnn_0 1457_splitncnn_1 1457_splitncnn_2 1457_splitncnn_3
+Concat                   Concat_736               2 1 1455_splitncnn_4 1457_splitncnn_3 1458
+Convolution              Conv_737                 1 1 1458 1460 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_174            1 3 1460 1460_splitncnn_0 1460_splitncnn_1 1460_splitncnn_2
+Concat                   Concat_739               3 1 1455_splitncnn_3 1457_splitncnn_2 1460_splitncnn_2 1461
+Convolution              Conv_740                 1 1 1461 1463 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_175            1 2 1463 1463_splitncnn_0 1463_splitncnn_1
+Concat                   Concat_742               4 1 1455_splitncnn_2 1457_splitncnn_1 1460_splitncnn_1 1463_splitncnn_1 1464
+Convolution              Conv_743                 1 1 1464 1466 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_745               5 1 1455_splitncnn_1 1457_splitncnn_0 1460_splitncnn_0 1463_splitncnn_0 1466 1467
+Convolution              Conv_746                 1 1 1467 1468 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_749                  2 1 1468 1455_splitncnn_0 1471 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_176            1 6 1471 1471_splitncnn_0 1471_splitncnn_1 1471_splitncnn_2 1471_splitncnn_3 1471_splitncnn_4 1471_splitncnn_5
+Convolution              Conv_750                 1 1 1471_splitncnn_5 1473 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_177            1 4 1473 1473_splitncnn_0 1473_splitncnn_1 1473_splitncnn_2 1473_splitncnn_3
+Concat                   Concat_752               2 1 1471_splitncnn_4 1473_splitncnn_3 1474
+Convolution              Conv_753                 1 1 1474 1476 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_178            1 3 1476 1476_splitncnn_0 1476_splitncnn_1 1476_splitncnn_2
+Concat                   Concat_755               3 1 1471_splitncnn_3 1473_splitncnn_2 1476_splitncnn_2 1477
+Convolution              Conv_756                 1 1 1477 1479 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_179            1 2 1479 1479_splitncnn_0 1479_splitncnn_1
+Concat                   Concat_758               4 1 1471_splitncnn_2 1473_splitncnn_1 1476_splitncnn_1 1479_splitncnn_1 1480
+Convolution              Conv_759                 1 1 1480 1482 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_761               5 1 1471_splitncnn_1 1473_splitncnn_0 1476_splitncnn_0 1479_splitncnn_0 1482 1483
+Convolution              Conv_762                 1 1 1483 1484 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_765                  2 1 1484 1471_splitncnn_0 1487 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_768                  2 1 1487 1439_splitncnn_0 1490 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_180            1 7 1490 1490_splitncnn_0 1490_splitncnn_1 1490_splitncnn_2 1490_splitncnn_3 1490_splitncnn_4 1490_splitncnn_5 1490_splitncnn_6
+Convolution              Conv_769                 1 1 1490_splitncnn_6 1492 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_181            1 4 1492 1492_splitncnn_0 1492_splitncnn_1 1492_splitncnn_2 1492_splitncnn_3
+Concat                   Concat_771               2 1 1490_splitncnn_5 1492_splitncnn_3 1493
+Convolution              Conv_772                 1 1 1493 1495 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_182            1 3 1495 1495_splitncnn_0 1495_splitncnn_1 1495_splitncnn_2
+Concat                   Concat_774               3 1 1490_splitncnn_4 1492_splitncnn_2 1495_splitncnn_2 1496
+Convolution              Conv_775                 1 1 1496 1498 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_183            1 2 1498 1498_splitncnn_0 1498_splitncnn_1
+Concat                   Concat_777               4 1 1490_splitncnn_3 1492_splitncnn_1 1495_splitncnn_1 1498_splitncnn_1 1499
+Convolution              Conv_778                 1 1 1499 1501 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_780               5 1 1490_splitncnn_2 1492_splitncnn_0 1495_splitncnn_0 1498_splitncnn_0 1501 1502
+Convolution              Conv_781                 1 1 1502 1503 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_784                  2 1 1503 1490_splitncnn_1 1506 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_184            1 6 1506 1506_splitncnn_0 1506_splitncnn_1 1506_splitncnn_2 1506_splitncnn_3 1506_splitncnn_4 1506_splitncnn_5
+Convolution              Conv_785                 1 1 1506_splitncnn_5 1508 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_185            1 4 1508 1508_splitncnn_0 1508_splitncnn_1 1508_splitncnn_2 1508_splitncnn_3
+Concat                   Concat_787               2 1 1506_splitncnn_4 1508_splitncnn_3 1509
+Convolution              Conv_788                 1 1 1509 1511 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_186            1 3 1511 1511_splitncnn_0 1511_splitncnn_1 1511_splitncnn_2
+Concat                   Concat_790               3 1 1506_splitncnn_3 1508_splitncnn_2 1511_splitncnn_2 1512
+Convolution              Conv_791                 1 1 1512 1514 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_187            1 2 1514 1514_splitncnn_0 1514_splitncnn_1
+Concat                   Concat_793               4 1 1506_splitncnn_2 1508_splitncnn_1 1511_splitncnn_1 1514_splitncnn_1 1515
+Convolution              Conv_794                 1 1 1515 1517 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_796               5 1 1506_splitncnn_1 1508_splitncnn_0 1511_splitncnn_0 1514_splitncnn_0 1517 1518
+Convolution              Conv_797                 1 1 1518 1519 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_800                  2 1 1519 1506_splitncnn_0 1522 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_188            1 6 1522 1522_splitncnn_0 1522_splitncnn_1 1522_splitncnn_2 1522_splitncnn_3 1522_splitncnn_4 1522_splitncnn_5
+Convolution              Conv_801                 1 1 1522_splitncnn_5 1524 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_189            1 4 1524 1524_splitncnn_0 1524_splitncnn_1 1524_splitncnn_2 1524_splitncnn_3
+Concat                   Concat_803               2 1 1522_splitncnn_4 1524_splitncnn_3 1525
+Convolution              Conv_804                 1 1 1525 1527 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_190            1 3 1527 1527_splitncnn_0 1527_splitncnn_1 1527_splitncnn_2
+Concat                   Concat_806               3 1 1522_splitncnn_3 1524_splitncnn_2 1527_splitncnn_2 1528
+Convolution              Conv_807                 1 1 1528 1530 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_191            1 2 1530 1530_splitncnn_0 1530_splitncnn_1
+Concat                   Concat_809               4 1 1522_splitncnn_2 1524_splitncnn_1 1527_splitncnn_1 1530_splitncnn_1 1531
+Convolution              Conv_810                 1 1 1531 1533 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_812               5 1 1522_splitncnn_1 1524_splitncnn_0 1527_splitncnn_0 1530_splitncnn_0 1533 1534
+Convolution              Conv_813                 1 1 1534 1535 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_816                  2 1 1535 1522_splitncnn_0 1538 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_819                  2 1 1538 1490_splitncnn_0 1541 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_192            1 7 1541 1541_splitncnn_0 1541_splitncnn_1 1541_splitncnn_2 1541_splitncnn_3 1541_splitncnn_4 1541_splitncnn_5 1541_splitncnn_6
+Convolution              Conv_820                 1 1 1541_splitncnn_6 1543 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_193            1 4 1543 1543_splitncnn_0 1543_splitncnn_1 1543_splitncnn_2 1543_splitncnn_3
+Concat                   Concat_822               2 1 1541_splitncnn_5 1543_splitncnn_3 1544
+Convolution              Conv_823                 1 1 1544 1546 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_194            1 3 1546 1546_splitncnn_0 1546_splitncnn_1 1546_splitncnn_2
+Concat                   Concat_825               3 1 1541_splitncnn_4 1543_splitncnn_2 1546_splitncnn_2 1547
+Convolution              Conv_826                 1 1 1547 1549 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_195            1 2 1549 1549_splitncnn_0 1549_splitncnn_1
+Concat                   Concat_828               4 1 1541_splitncnn_3 1543_splitncnn_1 1546_splitncnn_1 1549_splitncnn_1 1550
+Convolution              Conv_829                 1 1 1550 1552 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_831               5 1 1541_splitncnn_2 1543_splitncnn_0 1546_splitncnn_0 1549_splitncnn_0 1552 1553
+Convolution              Conv_832                 1 1 1553 1554 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_835                  2 1 1554 1541_splitncnn_1 1557 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_196            1 6 1557 1557_splitncnn_0 1557_splitncnn_1 1557_splitncnn_2 1557_splitncnn_3 1557_splitncnn_4 1557_splitncnn_5
+Convolution              Conv_836                 1 1 1557_splitncnn_5 1559 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_197            1 4 1559 1559_splitncnn_0 1559_splitncnn_1 1559_splitncnn_2 1559_splitncnn_3
+Concat                   Concat_838               2 1 1557_splitncnn_4 1559_splitncnn_3 1560
+Convolution              Conv_839                 1 1 1560 1562 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_198            1 3 1562 1562_splitncnn_0 1562_splitncnn_1 1562_splitncnn_2
+Concat                   Concat_841               3 1 1557_splitncnn_3 1559_splitncnn_2 1562_splitncnn_2 1563
+Convolution              Conv_842                 1 1 1563 1565 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_199            1 2 1565 1565_splitncnn_0 1565_splitncnn_1
+Concat                   Concat_844               4 1 1557_splitncnn_2 1559_splitncnn_1 1562_splitncnn_1 1565_splitncnn_1 1566
+Convolution              Conv_845                 1 1 1566 1568 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_847               5 1 1557_splitncnn_1 1559_splitncnn_0 1562_splitncnn_0 1565_splitncnn_0 1568 1569
+Convolution              Conv_848                 1 1 1569 1570 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_851                  2 1 1570 1557_splitncnn_0 1573 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_200            1 6 1573 1573_splitncnn_0 1573_splitncnn_1 1573_splitncnn_2 1573_splitncnn_3 1573_splitncnn_4 1573_splitncnn_5
+Convolution              Conv_852                 1 1 1573_splitncnn_5 1575 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_201            1 4 1575 1575_splitncnn_0 1575_splitncnn_1 1575_splitncnn_2 1575_splitncnn_3
+Concat                   Concat_854               2 1 1573_splitncnn_4 1575_splitncnn_3 1576
+Convolution              Conv_855                 1 1 1576 1578 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_202            1 3 1578 1578_splitncnn_0 1578_splitncnn_1 1578_splitncnn_2
+Concat                   Concat_857               3 1 1573_splitncnn_3 1575_splitncnn_2 1578_splitncnn_2 1579
+Convolution              Conv_858                 1 1 1579 1581 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_203            1 2 1581 1581_splitncnn_0 1581_splitncnn_1
+Concat                   Concat_860               4 1 1573_splitncnn_2 1575_splitncnn_1 1578_splitncnn_1 1581_splitncnn_1 1582
+Convolution              Conv_861                 1 1 1582 1584 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_863               5 1 1573_splitncnn_1 1575_splitncnn_0 1578_splitncnn_0 1581_splitncnn_0 1584 1585
+Convolution              Conv_864                 1 1 1585 1586 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_867                  2 1 1586 1573_splitncnn_0 1589 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_870                  2 1 1589 1541_splitncnn_0 1592 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_204            1 7 1592 1592_splitncnn_0 1592_splitncnn_1 1592_splitncnn_2 1592_splitncnn_3 1592_splitncnn_4 1592_splitncnn_5 1592_splitncnn_6
+Convolution              Conv_871                 1 1 1592_splitncnn_6 1594 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_205            1 4 1594 1594_splitncnn_0 1594_splitncnn_1 1594_splitncnn_2 1594_splitncnn_3
+Concat                   Concat_873               2 1 1592_splitncnn_5 1594_splitncnn_3 1595
+Convolution              Conv_874                 1 1 1595 1597 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_206            1 3 1597 1597_splitncnn_0 1597_splitncnn_1 1597_splitncnn_2
+Concat                   Concat_876               3 1 1592_splitncnn_4 1594_splitncnn_2 1597_splitncnn_2 1598
+Convolution              Conv_877                 1 1 1598 1600 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_207            1 2 1600 1600_splitncnn_0 1600_splitncnn_1
+Concat                   Concat_879               4 1 1592_splitncnn_3 1594_splitncnn_1 1597_splitncnn_1 1600_splitncnn_1 1601
+Convolution              Conv_880                 1 1 1601 1603 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_882               5 1 1592_splitncnn_2 1594_splitncnn_0 1597_splitncnn_0 1600_splitncnn_0 1603 1604
+Convolution              Conv_883                 1 1 1604 1605 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_886                  2 1 1605 1592_splitncnn_1 1608 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_208            1 6 1608 1608_splitncnn_0 1608_splitncnn_1 1608_splitncnn_2 1608_splitncnn_3 1608_splitncnn_4 1608_splitncnn_5
+Convolution              Conv_887                 1 1 1608_splitncnn_5 1610 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_209            1 4 1610 1610_splitncnn_0 1610_splitncnn_1 1610_splitncnn_2 1610_splitncnn_3
+Concat                   Concat_889               2 1 1608_splitncnn_4 1610_splitncnn_3 1611
+Convolution              Conv_890                 1 1 1611 1613 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_210            1 3 1613 1613_splitncnn_0 1613_splitncnn_1 1613_splitncnn_2
+Concat                   Concat_892               3 1 1608_splitncnn_3 1610_splitncnn_2 1613_splitncnn_2 1614
+Convolution              Conv_893                 1 1 1614 1616 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_211            1 2 1616 1616_splitncnn_0 1616_splitncnn_1
+Concat                   Concat_895               4 1 1608_splitncnn_2 1610_splitncnn_1 1613_splitncnn_1 1616_splitncnn_1 1617
+Convolution              Conv_896                 1 1 1617 1619 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_898               5 1 1608_splitncnn_1 1610_splitncnn_0 1613_splitncnn_0 1616_splitncnn_0 1619 1620
+Convolution              Conv_899                 1 1 1620 1621 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_902                  2 1 1621 1608_splitncnn_0 1624 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_212            1 6 1624 1624_splitncnn_0 1624_splitncnn_1 1624_splitncnn_2 1624_splitncnn_3 1624_splitncnn_4 1624_splitncnn_5
+Convolution              Conv_903                 1 1 1624_splitncnn_5 1626 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_213            1 4 1626 1626_splitncnn_0 1626_splitncnn_1 1626_splitncnn_2 1626_splitncnn_3
+Concat                   Concat_905               2 1 1624_splitncnn_4 1626_splitncnn_3 1627
+Convolution              Conv_906                 1 1 1627 1629 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_214            1 3 1629 1629_splitncnn_0 1629_splitncnn_1 1629_splitncnn_2
+Concat                   Concat_908               3 1 1624_splitncnn_3 1626_splitncnn_2 1629_splitncnn_2 1630
+Convolution              Conv_909                 1 1 1630 1632 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_215            1 2 1632 1632_splitncnn_0 1632_splitncnn_1
+Concat                   Concat_911               4 1 1624_splitncnn_2 1626_splitncnn_1 1629_splitncnn_1 1632_splitncnn_1 1633
+Convolution              Conv_912                 1 1 1633 1635 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_914               5 1 1624_splitncnn_1 1626_splitncnn_0 1629_splitncnn_0 1632_splitncnn_0 1635 1636
+Convolution              Conv_915                 1 1 1636 1637 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_918                  2 1 1637 1624_splitncnn_0 1640 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_921                  2 1 1640 1592_splitncnn_0 1643 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_216            1 7 1643 1643_splitncnn_0 1643_splitncnn_1 1643_splitncnn_2 1643_splitncnn_3 1643_splitncnn_4 1643_splitncnn_5 1643_splitncnn_6
+Convolution              Conv_922                 1 1 1643_splitncnn_6 1645 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_217            1 4 1645 1645_splitncnn_0 1645_splitncnn_1 1645_splitncnn_2 1645_splitncnn_3
+Concat                   Concat_924               2 1 1643_splitncnn_5 1645_splitncnn_3 1646
+Convolution              Conv_925                 1 1 1646 1648 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_218            1 3 1648 1648_splitncnn_0 1648_splitncnn_1 1648_splitncnn_2
+Concat                   Concat_927               3 1 1643_splitncnn_4 1645_splitncnn_2 1648_splitncnn_2 1649
+Convolution              Conv_928                 1 1 1649 1651 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_219            1 2 1651 1651_splitncnn_0 1651_splitncnn_1
+Concat                   Concat_930               4 1 1643_splitncnn_3 1645_splitncnn_1 1648_splitncnn_1 1651_splitncnn_1 1652
+Convolution              Conv_931                 1 1 1652 1654 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_933               5 1 1643_splitncnn_2 1645_splitncnn_0 1648_splitncnn_0 1651_splitncnn_0 1654 1655
+Convolution              Conv_934                 1 1 1655 1656 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_937                  2 1 1656 1643_splitncnn_1 1659 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_220            1 6 1659 1659_splitncnn_0 1659_splitncnn_1 1659_splitncnn_2 1659_splitncnn_3 1659_splitncnn_4 1659_splitncnn_5
+Convolution              Conv_938                 1 1 1659_splitncnn_5 1661 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_221            1 4 1661 1661_splitncnn_0 1661_splitncnn_1 1661_splitncnn_2 1661_splitncnn_3
+Concat                   Concat_940               2 1 1659_splitncnn_4 1661_splitncnn_3 1662
+Convolution              Conv_941                 1 1 1662 1664 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_222            1 3 1664 1664_splitncnn_0 1664_splitncnn_1 1664_splitncnn_2
+Concat                   Concat_943               3 1 1659_splitncnn_3 1661_splitncnn_2 1664_splitncnn_2 1665
+Convolution              Conv_944                 1 1 1665 1667 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_223            1 2 1667 1667_splitncnn_0 1667_splitncnn_1
+Concat                   Concat_946               4 1 1659_splitncnn_2 1661_splitncnn_1 1664_splitncnn_1 1667_splitncnn_1 1668
+Convolution              Conv_947                 1 1 1668 1670 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_949               5 1 1659_splitncnn_1 1661_splitncnn_0 1664_splitncnn_0 1667_splitncnn_0 1670 1671
+Convolution              Conv_950                 1 1 1671 1672 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_953                  2 1 1672 1659_splitncnn_0 1675 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_224            1 6 1675 1675_splitncnn_0 1675_splitncnn_1 1675_splitncnn_2 1675_splitncnn_3 1675_splitncnn_4 1675_splitncnn_5
+Convolution              Conv_954                 1 1 1675_splitncnn_5 1677 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_225            1 4 1677 1677_splitncnn_0 1677_splitncnn_1 1677_splitncnn_2 1677_splitncnn_3
+Concat                   Concat_956               2 1 1675_splitncnn_4 1677_splitncnn_3 1678
+Convolution              Conv_957                 1 1 1678 1680 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_226            1 3 1680 1680_splitncnn_0 1680_splitncnn_1 1680_splitncnn_2
+Concat                   Concat_959               3 1 1675_splitncnn_3 1677_splitncnn_2 1680_splitncnn_2 1681
+Convolution              Conv_960                 1 1 1681 1683 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_227            1 2 1683 1683_splitncnn_0 1683_splitncnn_1
+Concat                   Concat_962               4 1 1675_splitncnn_2 1677_splitncnn_1 1680_splitncnn_1 1683_splitncnn_1 1684
+Convolution              Conv_963                 1 1 1684 1686 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_965               5 1 1675_splitncnn_1 1677_splitncnn_0 1680_splitncnn_0 1683_splitncnn_0 1686 1687
+Convolution              Conv_966                 1 1 1687 1688 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_969                  2 1 1688 1675_splitncnn_0 1691 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_972                  2 1 1691 1643_splitncnn_0 1694 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_228            1 7 1694 1694_splitncnn_0 1694_splitncnn_1 1694_splitncnn_2 1694_splitncnn_3 1694_splitncnn_4 1694_splitncnn_5 1694_splitncnn_6
+Convolution              Conv_973                 1 1 1694_splitncnn_6 1696 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_229            1 4 1696 1696_splitncnn_0 1696_splitncnn_1 1696_splitncnn_2 1696_splitncnn_3
+Concat                   Concat_975               2 1 1694_splitncnn_5 1696_splitncnn_3 1697
+Convolution              Conv_976                 1 1 1697 1699 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_230            1 3 1699 1699_splitncnn_0 1699_splitncnn_1 1699_splitncnn_2
+Concat                   Concat_978               3 1 1694_splitncnn_4 1696_splitncnn_2 1699_splitncnn_2 1700
+Convolution              Conv_979                 1 1 1700 1702 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_231            1 2 1702 1702_splitncnn_0 1702_splitncnn_1
+Concat                   Concat_981               4 1 1694_splitncnn_3 1696_splitncnn_1 1699_splitncnn_1 1702_splitncnn_1 1703
+Convolution              Conv_982                 1 1 1703 1705 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_984               5 1 1694_splitncnn_2 1696_splitncnn_0 1699_splitncnn_0 1702_splitncnn_0 1705 1706
+Convolution              Conv_985                 1 1 1706 1707 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_988                  2 1 1707 1694_splitncnn_1 1710 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_232            1 6 1710 1710_splitncnn_0 1710_splitncnn_1 1710_splitncnn_2 1710_splitncnn_3 1710_splitncnn_4 1710_splitncnn_5
+Convolution              Conv_989                 1 1 1710_splitncnn_5 1712 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_233            1 4 1712 1712_splitncnn_0 1712_splitncnn_1 1712_splitncnn_2 1712_splitncnn_3
+Concat                   Concat_991               2 1 1710_splitncnn_4 1712_splitncnn_3 1713
+Convolution              Conv_992                 1 1 1713 1715 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_234            1 3 1715 1715_splitncnn_0 1715_splitncnn_1 1715_splitncnn_2
+Concat                   Concat_994               3 1 1710_splitncnn_3 1712_splitncnn_2 1715_splitncnn_2 1716
+Convolution              Conv_995                 1 1 1716 1718 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_235            1 2 1718 1718_splitncnn_0 1718_splitncnn_1
+Concat                   Concat_997               4 1 1710_splitncnn_2 1712_splitncnn_1 1715_splitncnn_1 1718_splitncnn_1 1719
+Convolution              Conv_998                 1 1 1719 1721 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1000              5 1 1710_splitncnn_1 1712_splitncnn_0 1715_splitncnn_0 1718_splitncnn_0 1721 1722
+Convolution              Conv_1001                1 1 1722 1723 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1004                 2 1 1723 1710_splitncnn_0 1726 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_236            1 6 1726 1726_splitncnn_0 1726_splitncnn_1 1726_splitncnn_2 1726_splitncnn_3 1726_splitncnn_4 1726_splitncnn_5
+Convolution              Conv_1005                1 1 1726_splitncnn_5 1728 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_237            1 4 1728 1728_splitncnn_0 1728_splitncnn_1 1728_splitncnn_2 1728_splitncnn_3
+Concat                   Concat_1007              2 1 1726_splitncnn_4 1728_splitncnn_3 1729
+Convolution              Conv_1008                1 1 1729 1731 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_238            1 3 1731 1731_splitncnn_0 1731_splitncnn_1 1731_splitncnn_2
+Concat                   Concat_1010              3 1 1726_splitncnn_3 1728_splitncnn_2 1731_splitncnn_2 1732
+Convolution              Conv_1011                1 1 1732 1734 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_239            1 2 1734 1734_splitncnn_0 1734_splitncnn_1
+Concat                   Concat_1013              4 1 1726_splitncnn_2 1728_splitncnn_1 1731_splitncnn_1 1734_splitncnn_1 1735
+Convolution              Conv_1014                1 1 1735 1737 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1016              5 1 1726_splitncnn_1 1728_splitncnn_0 1731_splitncnn_0 1734_splitncnn_0 1737 1738
+Convolution              Conv_1017                1 1 1738 1739 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1020                 2 1 1739 1726_splitncnn_0 1742 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_1023                 2 1 1742 1694_splitncnn_0 1745 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_240            1 7 1745 1745_splitncnn_0 1745_splitncnn_1 1745_splitncnn_2 1745_splitncnn_3 1745_splitncnn_4 1745_splitncnn_5 1745_splitncnn_6
+Convolution              Conv_1024                1 1 1745_splitncnn_6 1747 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_241            1 4 1747 1747_splitncnn_0 1747_splitncnn_1 1747_splitncnn_2 1747_splitncnn_3
+Concat                   Concat_1026              2 1 1745_splitncnn_5 1747_splitncnn_3 1748
+Convolution              Conv_1027                1 1 1748 1750 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_242            1 3 1750 1750_splitncnn_0 1750_splitncnn_1 1750_splitncnn_2
+Concat                   Concat_1029              3 1 1745_splitncnn_4 1747_splitncnn_2 1750_splitncnn_2 1751
+Convolution              Conv_1030                1 1 1751 1753 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_243            1 2 1753 1753_splitncnn_0 1753_splitncnn_1
+Concat                   Concat_1032              4 1 1745_splitncnn_3 1747_splitncnn_1 1750_splitncnn_1 1753_splitncnn_1 1754
+Convolution              Conv_1033                1 1 1754 1756 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1035              5 1 1745_splitncnn_2 1747_splitncnn_0 1750_splitncnn_0 1753_splitncnn_0 1756 1757
+Convolution              Conv_1036                1 1 1757 1758 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1039                 2 1 1758 1745_splitncnn_1 1761 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_244            1 6 1761 1761_splitncnn_0 1761_splitncnn_1 1761_splitncnn_2 1761_splitncnn_3 1761_splitncnn_4 1761_splitncnn_5
+Convolution              Conv_1040                1 1 1761_splitncnn_5 1763 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_245            1 4 1763 1763_splitncnn_0 1763_splitncnn_1 1763_splitncnn_2 1763_splitncnn_3
+Concat                   Concat_1042              2 1 1761_splitncnn_4 1763_splitncnn_3 1764
+Convolution              Conv_1043                1 1 1764 1766 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_246            1 3 1766 1766_splitncnn_0 1766_splitncnn_1 1766_splitncnn_2
+Concat                   Concat_1045              3 1 1761_splitncnn_3 1763_splitncnn_2 1766_splitncnn_2 1767
+Convolution              Conv_1046                1 1 1767 1769 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_247            1 2 1769 1769_splitncnn_0 1769_splitncnn_1
+Concat                   Concat_1048              4 1 1761_splitncnn_2 1763_splitncnn_1 1766_splitncnn_1 1769_splitncnn_1 1770
+Convolution              Conv_1049                1 1 1770 1772 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1051              5 1 1761_splitncnn_1 1763_splitncnn_0 1766_splitncnn_0 1769_splitncnn_0 1772 1773
+Convolution              Conv_1052                1 1 1773 1774 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1055                 2 1 1774 1761_splitncnn_0 1777 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_248            1 6 1777 1777_splitncnn_0 1777_splitncnn_1 1777_splitncnn_2 1777_splitncnn_3 1777_splitncnn_4 1777_splitncnn_5
+Convolution              Conv_1056                1 1 1777_splitncnn_5 1779 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_249            1 4 1779 1779_splitncnn_0 1779_splitncnn_1 1779_splitncnn_2 1779_splitncnn_3
+Concat                   Concat_1058              2 1 1777_splitncnn_4 1779_splitncnn_3 1780
+Convolution              Conv_1059                1 1 1780 1782 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_250            1 3 1782 1782_splitncnn_0 1782_splitncnn_1 1782_splitncnn_2
+Concat                   Concat_1061              3 1 1777_splitncnn_3 1779_splitncnn_2 1782_splitncnn_2 1783
+Convolution              Conv_1062                1 1 1783 1785 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_251            1 2 1785 1785_splitncnn_0 1785_splitncnn_1
+Concat                   Concat_1064              4 1 1777_splitncnn_2 1779_splitncnn_1 1782_splitncnn_1 1785_splitncnn_1 1786
+Convolution              Conv_1065                1 1 1786 1788 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1067              5 1 1777_splitncnn_1 1779_splitncnn_0 1782_splitncnn_0 1785_splitncnn_0 1788 1789
+Convolution              Conv_1068                1 1 1789 1790 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1071                 2 1 1790 1777_splitncnn_0 1793 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_1074                 2 1 1793 1745_splitncnn_0 1796 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_252            1 7 1796 1796_splitncnn_0 1796_splitncnn_1 1796_splitncnn_2 1796_splitncnn_3 1796_splitncnn_4 1796_splitncnn_5 1796_splitncnn_6
+Convolution              Conv_1075                1 1 1796_splitncnn_6 1798 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_253            1 4 1798 1798_splitncnn_0 1798_splitncnn_1 1798_splitncnn_2 1798_splitncnn_3
+Concat                   Concat_1077              2 1 1796_splitncnn_5 1798_splitncnn_3 1799
+Convolution              Conv_1078                1 1 1799 1801 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_254            1 3 1801 1801_splitncnn_0 1801_splitncnn_1 1801_splitncnn_2
+Concat                   Concat_1080              3 1 1796_splitncnn_4 1798_splitncnn_2 1801_splitncnn_2 1802
+Convolution              Conv_1081                1 1 1802 1804 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_255            1 2 1804 1804_splitncnn_0 1804_splitncnn_1
+Concat                   Concat_1083              4 1 1796_splitncnn_3 1798_splitncnn_1 1801_splitncnn_1 1804_splitncnn_1 1805
+Convolution              Conv_1084                1 1 1805 1807 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1086              5 1 1796_splitncnn_2 1798_splitncnn_0 1801_splitncnn_0 1804_splitncnn_0 1807 1808
+Convolution              Conv_1087                1 1 1808 1809 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1090                 2 1 1809 1796_splitncnn_1 1812 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_256            1 6 1812 1812_splitncnn_0 1812_splitncnn_1 1812_splitncnn_2 1812_splitncnn_3 1812_splitncnn_4 1812_splitncnn_5
+Convolution              Conv_1091                1 1 1812_splitncnn_5 1814 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_257            1 4 1814 1814_splitncnn_0 1814_splitncnn_1 1814_splitncnn_2 1814_splitncnn_3
+Concat                   Concat_1093              2 1 1812_splitncnn_4 1814_splitncnn_3 1815
+Convolution              Conv_1094                1 1 1815 1817 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_258            1 3 1817 1817_splitncnn_0 1817_splitncnn_1 1817_splitncnn_2
+Concat                   Concat_1096              3 1 1812_splitncnn_3 1814_splitncnn_2 1817_splitncnn_2 1818
+Convolution              Conv_1097                1 1 1818 1820 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_259            1 2 1820 1820_splitncnn_0 1820_splitncnn_1
+Concat                   Concat_1099              4 1 1812_splitncnn_2 1814_splitncnn_1 1817_splitncnn_1 1820_splitncnn_1 1821
+Convolution              Conv_1100                1 1 1821 1823 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1102              5 1 1812_splitncnn_1 1814_splitncnn_0 1817_splitncnn_0 1820_splitncnn_0 1823 1824
+Convolution              Conv_1103                1 1 1824 1825 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1106                 2 1 1825 1812_splitncnn_0 1828 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_260            1 6 1828 1828_splitncnn_0 1828_splitncnn_1 1828_splitncnn_2 1828_splitncnn_3 1828_splitncnn_4 1828_splitncnn_5
+Convolution              Conv_1107                1 1 1828_splitncnn_5 1830 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_261            1 4 1830 1830_splitncnn_0 1830_splitncnn_1 1830_splitncnn_2 1830_splitncnn_3
+Concat                   Concat_1109              2 1 1828_splitncnn_4 1830_splitncnn_3 1831
+Convolution              Conv_1110                1 1 1831 1833 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_262            1 3 1833 1833_splitncnn_0 1833_splitncnn_1 1833_splitncnn_2
+Concat                   Concat_1112              3 1 1828_splitncnn_3 1830_splitncnn_2 1833_splitncnn_2 1834
+Convolution              Conv_1113                1 1 1834 1836 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_263            1 2 1836 1836_splitncnn_0 1836_splitncnn_1
+Concat                   Concat_1115              4 1 1828_splitncnn_2 1830_splitncnn_1 1833_splitncnn_1 1836_splitncnn_1 1837
+Convolution              Conv_1116                1 1 1837 1839 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1118              5 1 1828_splitncnn_1 1830_splitncnn_0 1833_splitncnn_0 1836_splitncnn_0 1839 1840
+Convolution              Conv_1119                1 1 1840 1841 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1122                 2 1 1841 1828_splitncnn_0 1844 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_1125                 2 1 1844 1796_splitncnn_0 1847 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_264            1 7 1847 1847_splitncnn_0 1847_splitncnn_1 1847_splitncnn_2 1847_splitncnn_3 1847_splitncnn_4 1847_splitncnn_5 1847_splitncnn_6
+Convolution              Conv_1126                1 1 1847_splitncnn_6 1849 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_265            1 4 1849 1849_splitncnn_0 1849_splitncnn_1 1849_splitncnn_2 1849_splitncnn_3
+Concat                   Concat_1128              2 1 1847_splitncnn_5 1849_splitncnn_3 1850
+Convolution              Conv_1129                1 1 1850 1852 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_266            1 3 1852 1852_splitncnn_0 1852_splitncnn_1 1852_splitncnn_2
+Concat                   Concat_1131              3 1 1847_splitncnn_4 1849_splitncnn_2 1852_splitncnn_2 1853
+Convolution              Conv_1132                1 1 1853 1855 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_267            1 2 1855 1855_splitncnn_0 1855_splitncnn_1
+Concat                   Concat_1134              4 1 1847_splitncnn_3 1849_splitncnn_1 1852_splitncnn_1 1855_splitncnn_1 1856
+Convolution              Conv_1135                1 1 1856 1858 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1137              5 1 1847_splitncnn_2 1849_splitncnn_0 1852_splitncnn_0 1855_splitncnn_0 1858 1859
+Convolution              Conv_1138                1 1 1859 1860 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1141                 2 1 1860 1847_splitncnn_1 1863 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_268            1 6 1863 1863_splitncnn_0 1863_splitncnn_1 1863_splitncnn_2 1863_splitncnn_3 1863_splitncnn_4 1863_splitncnn_5
+Convolution              Conv_1142                1 1 1863_splitncnn_5 1865 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_269            1 4 1865 1865_splitncnn_0 1865_splitncnn_1 1865_splitncnn_2 1865_splitncnn_3
+Concat                   Concat_1144              2 1 1863_splitncnn_4 1865_splitncnn_3 1866
+Convolution              Conv_1145                1 1 1866 1868 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_270            1 3 1868 1868_splitncnn_0 1868_splitncnn_1 1868_splitncnn_2
+Concat                   Concat_1147              3 1 1863_splitncnn_3 1865_splitncnn_2 1868_splitncnn_2 1869
+Convolution              Conv_1148                1 1 1869 1871 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_271            1 2 1871 1871_splitncnn_0 1871_splitncnn_1
+Concat                   Concat_1150              4 1 1863_splitncnn_2 1865_splitncnn_1 1868_splitncnn_1 1871_splitncnn_1 1872
+Convolution              Conv_1151                1 1 1872 1874 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1153              5 1 1863_splitncnn_1 1865_splitncnn_0 1868_splitncnn_0 1871_splitncnn_0 1874 1875
+Convolution              Conv_1154                1 1 1875 1876 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1157                 2 1 1876 1863_splitncnn_0 1879 0=1 -23301=2,2.000000e-01,1.000000e+00
+Split                    splitncnn_272            1 6 1879 1879_splitncnn_0 1879_splitncnn_1 1879_splitncnn_2 1879_splitncnn_3 1879_splitncnn_4 1879_splitncnn_5
+Convolution              Conv_1158                1 1 1879_splitncnn_5 1881 0=32 1=3 4=1 5=1 6=18432 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_273            1 4 1881 1881_splitncnn_0 1881_splitncnn_1 1881_splitncnn_2 1881_splitncnn_3
+Concat                   Concat_1160              2 1 1879_splitncnn_4 1881_splitncnn_3 1882
+Convolution              Conv_1161                1 1 1882 1884 0=32 1=3 4=1 5=1 6=27648 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_274            1 3 1884 1884_splitncnn_0 1884_splitncnn_1 1884_splitncnn_2
+Concat                   Concat_1163              3 1 1879_splitncnn_3 1881_splitncnn_2 1884_splitncnn_2 1885
+Convolution              Conv_1164                1 1 1885 1887 0=32 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Split                    splitncnn_275            1 2 1887 1887_splitncnn_0 1887_splitncnn_1
+Concat                   Concat_1166              4 1 1879_splitncnn_2 1881_splitncnn_1 1884_splitncnn_1 1887_splitncnn_1 1888
+Convolution              Conv_1167                1 1 1888 1890 0=32 1=3 4=1 5=1 6=46080 9=2 -23310=1,2.000000e-01
+Concat                   Concat_1169              5 1 1879_splitncnn_1 1881_splitncnn_0 1884_splitncnn_0 1887_splitncnn_0 1890 1891
+Convolution              Conv_1170                1 1 1891 1892 0=64 1=3 4=1 5=1 6=110592
+Eltwise                  Add_1173                 2 1 1892 1879_splitncnn_0 1895 0=1 -23301=2,2.000000e-01,1.000000e+00
+Eltwise                  Add_1176                 2 1 1895 1847_splitncnn_0 1898 0=1 -23301=2,2.000000e-01,1.000000e+00
+Convolution              Conv_1177                1 1 1898 1899 0=64 1=3 4=1 5=1 6=36864
+BinaryOp                 Add_1178                 2 1 725_splitncnn_0 1899 1900
+Interp                   Resize_1180              1 1 1900 1905 0=1 1=2.000000e+00 2=2.000000e+00
+Convolution              Conv_1181                1 1 1905 1907 0=64 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Interp                   Resize_1184              1 1 1907 1912 0=1 1=2.000000e+00 2=2.000000e+00
+Convolution              Conv_1185                1 1 1912 1914 0=64 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Convolution              Conv_1187                1 1 1914 1916 0=64 1=3 4=1 5=1 6=36864 9=2 -23310=1,2.000000e-01
+Convolution              Conv_1189                1 1 1916 output 0=3 1=3 4=1 5=1 6=1728
