@@ -133,8 +133,9 @@ int RealESRGAN::Process(const cv::Mat& input_img, void* result)
             out_tile(tile_roi).copyTo(out(out_roi));
         }
     }
-    cv::resize(out, *((cv::Mat*)result), input_img.size(), 0, 0, 1);
 
+    out.copyTo(*((cv::Mat*)result));
+    
     return 0;
 }
 void RealESRGAN::Run(const std::vector<Tensor_t>& input_tensor, std::vector<Tensor_t>& output_tensor)

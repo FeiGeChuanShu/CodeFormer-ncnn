@@ -21,9 +21,11 @@ static void paste_faces_to_input_image(const cv::Mat& restored_face, cv::Mat& tr
 
     cv::Mat inv_restored;
     cv::warpAffine(restored_face, inv_restored, trans_matrix_inv, bg_upsample.size(), 1, 0);
+
     cv::Mat mask = cv::Mat::ones(cv::Size(512, 512), CV_8UC1) * 255;
     cv::Mat inv_mask;
     cv::warpAffine(mask, inv_mask, trans_matrix_inv, bg_upsample.size(), 1, 0);
+
     cv::Mat inv_mask_erosion;
     cv::Mat kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(4, 4));
     cv::erode(inv_mask, inv_mask_erosion, kernel);
@@ -41,14 +43,20 @@ static void paste_faces_to_input_image(const cv::Mat& restored_face, cv::Mat& tr
     cv::Mat inv_soft_mask;
     cv::GaussianBlur(inv_mask_center, inv_soft_mask, cv::Size(blur_size + 1, blur_size + 1), 0, 0, 4);
 
-    for (int h = 0; h < bg_upsample.rows; h++)
+    cv::Mat inv_soft_mask_f;
+    inv_soft_mask.convertTo(inv_soft_mask_f, CV_32F, 1 / 255.f, 0.f);
+
+    #pragma omp parallel for
+    for (int h = 0; h < bg_upsample.rows; ++h)
     {
-        for (int w = 0; w < bg_upsample.cols; w++)
+        cv::Vec3b* img_ptr = bg_upsample.ptr<cv::Vec3b>(h);
+        cv::Vec3b* face_ptr = pasted_face.ptr<cv::Vec3b>(h);
+        float* mask_ptr = inv_soft_mask_f.ptr<float>(h);
+        for (int w = 0; w < bg_upsample.cols; ++w)
         {
-            float alpha = inv_soft_mask.at<uchar>(h, w) / 255.0;
-            bg_upsample.at<cv::Vec3b>(h, w)[0] = pasted_face.at<cv::Vec3b>(h, w)[0] * alpha + (1 - alpha) * bg_upsample.at<cv::Vec3b>(h, w)[0];
-            bg_upsample.at<cv::Vec3b>(h, w)[1] = pasted_face.at<cv::Vec3b>(h, w)[1] * alpha + (1 - alpha) * bg_upsample.at<cv::Vec3b>(h, w)[1];
-            bg_upsample.at<cv::Vec3b>(h, w)[2] = pasted_face.at<cv::Vec3b>(h, w)[2] * alpha + (1 - alpha) * bg_upsample.at<cv::Vec3b>(h, w)[2];
+            img_ptr[w][0] = img_ptr[w][0] * (1 - mask_ptr[w]) + face_ptr[w][0] * mask_ptr[w];
+            img_ptr[w][1] = img_ptr[w][1] * (1 - mask_ptr[w]) + face_ptr[w][1] * mask_ptr[w];
+            img_ptr[w][2] = img_ptr[w][2] * (1 - mask_ptr[w]) + face_ptr[w][2] * mask_ptr[w];
         }
     }
 }
@@ -82,9 +90,13 @@ int PipeLine::Apply(const cv::Mat& input_img, cv::Mat& output_img)
 {   
     cv::Mat bg_upsample;
     if (pipeline_config_.bg_upsample)
+    {
         real_esrgan_->Process(input_img, (void*)&bg_upsample);
+    }
     else
-        input_img.copyTo(bg_upsample);
+    {
+        cv::resize(input_img, bg_upsample, cv::Size(input_img.cols * 2, input_img.rows * 2), 0, 0, 1);
+    }
 
     PipeResult_t pipe_result;
     face_detector_->Process(input_img, (void*)&pipe_result);

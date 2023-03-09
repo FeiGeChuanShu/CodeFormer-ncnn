@@ -19,7 +19,6 @@ public:
 private:
     std::unique_ptr<Encoder> encoder_;
     std::unique_ptr<Generator> generator_;
-
 };
 }
 #endif // CODEFORMER_H

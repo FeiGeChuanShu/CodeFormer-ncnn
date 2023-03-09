@@ -107,7 +107,7 @@ static void generate_proposals(const ncnn::Mat& anchors, int stride, int pad_h, 
         num_grid_x = num_grid / num_grid_y;
     }
 
-    const int num_class = feat_blob.w - 15;
+    const int num_class = feat_blob.w - 15 -5;
 
     const int num_anchors = anchors.w / 2;
 
@@ -123,53 +123,53 @@ static void generate_proposals(const ncnn::Mat& anchors, int stride, int pad_h, 
             for (int j = 0; j < num_grid_x; j++)
             {
                 const float* featptr = feat.row(i * num_grid_x + j);
-
-                // find class index with max class score
-                float class_score = -FLT_MAX;
-                for (int k = 0; k < num_class; k++)
+                float box_confidence = sigmoid(featptr[4]);
+                if (box_confidence >= prob_threshold)
                 {
-                    float score = featptr[15 + k];
-                    if (score > class_score)
+                    // find class index with max class score
+                    float class_score = -FLT_MAX;
+                    for (int k = 0; k < num_class; k++)
                     {
-                        class_score = score;
+                        float score = featptr[5 + k];
+                        if (score > class_score)
+                        {
+                            class_score = score;
+                        }
                     }
-                }
 
-                float box_score = featptr[4];
-                
-                float confidence = sigmoid(box_score);
-
-                if (confidence >= prob_threshold)
-                {
-                    float dx = sigmoid(featptr[0]);
-                    float dy = sigmoid(featptr[1]);
-                    float dw = sigmoid(featptr[2]);
-                    float dh = sigmoid(featptr[3]);
-
-                    float pb_cx = (dx * 2.f - 0.5f + j) * stride;
-                    float pb_cy = (dy * 2.f - 0.5f + i) * stride;
-
-                    float pb_w = pow(dw * 2.f, 2) * anchor_w;
-                    float pb_h = pow(dh * 2.f, 2) * anchor_h;
-
-                    float x0 = pb_cx - pb_w * 0.5f;
-                    float y0 = pb_cy - pb_h * 0.5f;
-                    float x1 = pb_cx + pb_w * 0.5f;
-                    float y1 = pb_cy + pb_h * 0.5f;
-
-                    Object_t obj;
-                    obj.rect.x = x0;
-                    obj.rect.y = y0;
-                    obj.rect.width = x1 - x0;
-                    obj.rect.height = y1 - y0;
-                    obj.score = confidence;
-                    for (int l = 0; l < 5; l++)
+                    float confidence = box_confidence * sigmoid(class_score);
+                    if (confidence >= prob_threshold)
                     {
-                        float x = featptr[2 * l + 5] * anchor_w + j * stride;
-                        float y = featptr[2 * l + 1 + 5] * anchor_h + i * stride;
-                        obj.pts.push_back(cv::Point2f(x, y));
+                        float dx = sigmoid(featptr[0]);
+                        float dy = sigmoid(featptr[1]);
+                        float dw = sigmoid(featptr[2]);
+                        float dh = sigmoid(featptr[3]);
+
+                        float pb_cx = (dx * 2.f - 0.5f + j) * stride;
+                        float pb_cy = (dy * 2.f - 0.5f + i) * stride;
+
+                        float pb_w = pow(dw * 2.f, 2) * anchor_w;
+                        float pb_h = pow(dh * 2.f, 2) * anchor_h;
+
+                        float x0 = pb_cx - pb_w * 0.5f;
+                        float y0 = pb_cy - pb_h * 0.5f;
+                        float x1 = pb_cx + pb_w * 0.5f;
+                        float y1 = pb_cy + pb_h * 0.5f;
+
+                        Object_t obj;
+                        obj.rect.x = x0;
+                        obj.rect.y = y0;
+                        obj.rect.width = x1 - x0;
+                        obj.rect.height = y1 - y0;
+                        obj.score = confidence;
+                        for (int l = 0; l < 5; l++)
+                        {
+                            float x = (featptr[3 * l + 6] * 2-0.5 +  j) * stride;
+                            float y = (featptr[3 * l + 1 + 6] * 2-0.5 + i) * stride;
+                            obj.pts.push_back(cv::Point2f(x, y));
+                        }
+                        objects.push_back(obj);
                     }
-                    objects.push_back(obj);
                 }
             }
         }
@@ -191,8 +191,8 @@ Face::~Face()
 
 int Face::Load(const std::string& model_path)
 {
-    std::string net_param_path = model_path + "/yolov5-blazeface.param";
-    std::string net_model_path = model_path + "/yolov5-blazeface.bin";
+    std::string net_param_path = model_path + "/yolov7-lite-e.param";
+    std::string net_model_path = model_path + "/yolov7-lite-e.bin";
 
     int ret = net_.load_param(net_param_path.c_str());
     if (ret < 0)
@@ -207,7 +207,7 @@ int Face::Load(const std::string& model_path)
         return -1;
     }
 
-    output_indexes_.resize(2);
+    output_indexes_.resize(3);
     const auto &blobs = net_.blobs();
     for (int i = 0; i != blobs.size(); ++i) 
     {
@@ -216,6 +216,8 @@ int Face::Load(const std::string& model_path)
             output_indexes_[0] = i;
         if (b.name == "stride_16")  
             output_indexes_[1] = i;
+        if (b.name == "stride_32")  
+            output_indexes_[2] = i;
     }
 
     for(const auto& input : net_.input_indexes())
@@ -229,7 +231,7 @@ int Face::Load(const std::string& model_path)
 
 void Face::PreProcess(const void* input_data, std::vector<Tensor_t>& input_tensor)
 {
-    const int target_size = 320;
+    const int target_size = 640;
 
     cv::Mat *bgr = (cv::Mat*)input_data;
     int img_w = bgr->cols;
@@ -256,8 +258,8 @@ void Face::PreProcess(const void* input_data, std::vector<Tensor_t>& input_tenso
 
     // pad to target_size rectangle
     // yolov5/utils/datasets.py letterbox
-    int wpad = (w + 31) / 32 * 32 - w;
-    int hpad = (h + 31) / 32 * 32 - h;
+    int wpad = target_size - w;//(w + 31) / 32 * 32 - w;
+    int hpad = target_size - h;//(h + 31) / 32 * 32 - h;
     ncnn::Mat in_pad;
     ncnn::copy_make_border(in, in_pad, hpad / 2, hpad - hpad / 2, wpad / 2, wpad - wpad / 2, ncnn::BORDER_CONSTANT, 0.f);
 
@@ -293,14 +295,14 @@ void Face::Run(const std::vector<Tensor_t>& input_tensor, std::vector<Tensor_t>&
 }
 void Face::AlignFace(const cv::Mat& img, Object_t& object)
 {
-    cv::Mat affine_matrix = cv::estimateAffinePartial2D(object.pts, face_template);
+    cv::Mat affine_matrix = cv::estimateAffinePartial2D(object.pts, face_template,cv::noArray(), cv::LMEDS);
 
     cv::Mat cropped_face;
     cv::warpAffine(img, cropped_face, affine_matrix, cv::Size(512, 512), 1, cv::BORDER_CONSTANT, cv::Scalar(135, 133, 132));
 
     cv::Mat affine_matrix_inv;
     cv::invertAffineTransform(affine_matrix, affine_matrix_inv);
-    
+    affine_matrix_inv *= 2;
     affine_matrix_inv.copyTo(object.trans_inv);
     cropped_face.copyTo(object.trans_img);
 
@@ -311,12 +313,12 @@ void Face::PostProcess(const std::vector<Tensor_t>& input_tensor, std::vector<Te
     // stride 8
     {
         ncnn::Mat anchors(6);
-        anchors[0] = 5.f;
-        anchors[1] = 6.f;
-        anchors[2] = 10.f;
-        anchors[3] = 13.f;
-        anchors[4] = 21.f;
-        anchors[5] = 26.f;
+        anchors[0] = 4.f;
+        anchors[1] = 5.f;
+        anchors[2] = 6.f;
+        anchors[3] = 8.f;
+        anchors[4] = 10.f;
+        anchors[5] = 12.f;
 
         std::vector<Object_t> objects8;
         generate_proposals(anchors, 8, input_tensor[0].in_h, input_tensor[0].in_w, output_tensor[0].data, prob_threshold, objects8);
@@ -327,18 +329,34 @@ void Face::PostProcess(const std::vector<Tensor_t>& input_tensor, std::vector<Te
     // stride 16
     {
         ncnn::Mat anchors(6);
-        anchors[0] = 55.f;
-        anchors[1] = 72.f;
-        anchors[2] = 225.f;
-        anchors[3] = 304.f;
-        anchors[4] = 438.f;
-        anchors[5] = 553.f;
+        anchors[0] = 15.f;
+        anchors[1] = 19.f;
+        anchors[2] = 23.f;
+        anchors[3] = 30.f;
+        anchors[4] = 39.f;
+        anchors[5] = 52.f;
 
         std::vector<Object_t> objects16;
         generate_proposals(anchors, 16, input_tensor[0].in_h, input_tensor[0].in_w, output_tensor[1].data, prob_threshold, objects16);
 
 
         proposals.insert(proposals.end(), objects16.begin(), objects16.end());
+    }
+
+    // stride 32
+    {
+        ncnn::Mat anchors(6);
+        anchors[0] = 72.f;
+        anchors[1] = 97.f;
+        anchors[2] = 123.f;
+        anchors[3] = 164.f;
+        anchors[4] = 209.f;
+        anchors[5] = 297.f;
+
+        std::vector<Object_t> objects32;
+        generate_proposals(anchors, 32, input_tensor[0].in_h, input_tensor[0].in_w, output_tensor[2].data, prob_threshold, objects32);
+
+        proposals.insert(proposals.end(), objects32.begin(), objects32.end());
     }
 
     // sort all proposals by score from highest to lowest
