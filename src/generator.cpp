@@ -116,8 +116,6 @@ void Generator::Run(const std::vector<Tensor_t>& input_tensor, std::vector<Tenso
     {
         ncnn::Mat out;
         generator_ex.extract(output_indexes_[i], out);
-        //Tensor_t tensor_t(out);
-        //tensor_t.data = out;
         output_tensor.push_back(Tensor_t(out));
     }
 }

@@ -288,9 +288,6 @@ void Face::Run(const std::vector<Tensor_t>& input_tensor, std::vector<Tensor_t>&
     {
         ncnn::Mat out;
         net_ex.extract(output_indexes_[i], out);
-        //Tensor_t tensor_t;
-        //tensor_t.data = out;
-        
         output_tensor.push_back(Tensor_t(out));
     }
 }
